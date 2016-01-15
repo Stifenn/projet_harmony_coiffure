@@ -16,8 +16,20 @@ class CommentairesController extends Controller
 	function ModifierCommentaires($id)
 	{
 		$commentairesManager = new \manager\CommentairesManager();
-		$Commentaires = $commentairesManager->update(['moderation' => $_REQUEST['statut']],$id);
-		$this->show('commentaires/modifier_commentaires', ['Commentaire' => $Commentaires]);
+		
+		if(isset($_REQUEST['statut']) == 'on')
+		{
+			$Commentaires = $commentairesManager->update(['moderation' => 1],$id);
+		}elseif(!isset($_REQUEST['statut']))
+		{
+			$Commentaires = $commentairesManager->update(['moderation' => 0],$id);
+		}
+		if(isset($_REQUEST['supprimer']))
+		{
+			$Commentaires = $commentairesManager->delete($id);
+		}
+		
+		$this->redirectToRoute('administration_commentaires');
 	}
 
 }
