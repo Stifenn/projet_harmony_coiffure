@@ -48,7 +48,8 @@ class images_slidersController extends Controller
 			    } else {
 				    // Renommer nom du fichier
 				    $chemin = sha1_file($_FILES['my-file']['tmp_name']) . '.' . $extFoundInArray;
-				    $path = 'img/' . $chemin;
+				    $path = 'assets/img/' . $chemin;
+				    $pathbd = 'img/' . $chemin;
 				    $label = $_POST['label'];
 					$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 					if(!$moved) {
@@ -61,16 +62,16 @@ class images_slidersController extends Controller
 		}
 	}
 		$images_slidersManager = New \Manager\images_slidersManager();
-		$slider = $images_slidersManager->insert(['chemin'=>$path , 'label'=>$_REQUEST['label']]);
-		/*$this->show('images_sliders/slider', ['slider'=>$slider]);*/
-		$this->redirectToRoute('slider');
+		$slider = $images_slidersManager->insert(['chemin'=>$pathbd , 'label'=>$_REQUEST['label']]);
+		$this->show('images_sliders/slidersubmit', ['slider'=>$slider]);
+		//$this->redirectToRoute('slider');
 	}
 
 	public function delete_image_slider(){
 		$images_slidersManager = New \Manager\images_slidersManager();
 		$id = $_REQUEST['id'];
 		$slider = $images_slidersManager->delete($id);
-		/*$this->show('images_sliders/slider', ['slider'=>$slider]);*/
+		//$this->show('images_sliders/slider', ['slider'=>$slider]);
 		$this->redirectToRoute('slider');
 	}
 }

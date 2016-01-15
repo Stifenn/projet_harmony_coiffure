@@ -32,4 +32,12 @@ class UserController extends Controller
 	$this->show('user/create_user');
 	}
 
+	function Recherche()
+	{
+		$name = $_REQUEST['name'];
+		$usersManager = new \Manager\UserManager();
+		$recherche = $usersManager->findUsers($name);
+		$this->show('user/recherche',['recherche'=> $recherche]);
+	}
+
 }

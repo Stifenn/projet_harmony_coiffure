@@ -27,4 +27,5 @@
 		</div>
 <?php endif; ?>
 
+<?= password_hash('password', PASSWORD_DEFAULT)?>
 <?php $this->stop('main_content') ?>
