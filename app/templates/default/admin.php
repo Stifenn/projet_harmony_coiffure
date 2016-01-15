@@ -1,4 +1,4 @@
-<?php $this->layout('layoutBack', ['title' => 'Gestion']) ?>
+<?php $this->layout('layoutBack', ['title' => 'Admin']) ?>
 
 <?php $this->start('main_content') ?>
 	<h2>Let's code.</h2>

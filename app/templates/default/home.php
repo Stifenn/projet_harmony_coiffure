@@ -20,7 +20,7 @@
 			<?php
 				// si on est admin on affiche un lien vers la gestion
 				if ($_SESSION['user']['role'] == 'admin') : ?>
-					<a href="<?= $this->url('gestion') ?>">Gestion</a>
+					<a href="<?= $this->url('admin') ?>">Gestion</a>
 				<?php endif;
 				// si on est connecté on propose un lien de déconnexion ?>
 			<a href="<?= $this->url('logoff') ?>">Déconnexion</a>

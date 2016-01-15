@@ -14,7 +14,7 @@
 
 	
 		<?php foreach ($lookbook as $currentLookbook) : ?> 
-			<img src="<?= $currentLookbook['chemin'] ?>" alt="<?= $currentLookbook['label'] ?>" width="50%" height="50%" ><br>
+			<img src="<?= $this->assetUrl($currentLookbook['chemin']) ?>" alt="<?= $currentLookbook['label'] ?>" width="50%" height="50%" ><br>
 			<form action="<?= $this->url('lookbookdelete')?>" method="POST" accept-charset="utf-8">
 				<input type="hidden" name="id" value="<?= $currentLookbook['id'] ?>">
 				<input type="submit" name="delete-file" value="Supprimer">

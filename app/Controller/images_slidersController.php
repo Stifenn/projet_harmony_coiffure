@@ -48,7 +48,8 @@ class images_slidersController extends Controller
 			    } else {
 				    // Renommer nom du fichier
 				    $chemin = sha1_file($_FILES['my-file']['tmp_name']) . '.' . $extFoundInArray;
-				    $path = 'img/' . $chemin;
+				    $path = 'assets/img/slider/' . $chemin;
+				    $pathbd = 'img/slider/' . $chemin;
 				    $label = $_POST['label'];
 					$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 					if(!$moved) {
@@ -61,7 +62,7 @@ class images_slidersController extends Controller
 		}
 	}
 		$images_slidersManager = New \Manager\images_slidersManager();
-		$slider = $images_slidersManager->insert(['chemin'=>$path , 'label'=>$_REQUEST['label']]);
+		$slider = $images_slidersManager->insert(['chemin'=>$pathbd , 'label'=>$_REQUEST['label']]);
 		/*$this->show('images_sliders/slider', ['slider'=>$slider]);*/
 		$this->redirectToRoute('slider');
 	}

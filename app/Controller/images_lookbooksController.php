@@ -46,9 +46,10 @@ class images_lookbooksController extends Controller
 			    if ($extFoundInArray === false) {
 			    	echo 'Le fichier n\'est pas une image';
 			    } else {
-				    // Renommer nom du fichier
+				    // Renommer nom du fichier	 
 				    $chemin = sha1_file($_FILES['my-file']['tmp_name']) . '.' . $extFoundInArray;
-				    $path = 'img/' . $chemin;
+				    $path = 'assets/img/lookbook/' . $chemin;
+				    $pathbd = 'img/lookbook/' . $chemin;
 				    $label = $_POST['label'];
 					$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 					if(!$moved) {
@@ -61,7 +62,7 @@ class images_lookbooksController extends Controller
 		}
 	}
 		$images_lookbooksManager = New \Manager\images_lookbooksManager();
-		$lookbook = $images_lookbooksManager->insert(['chemin'=>$path , 'label'=>$_REQUEST['label']]);
+		$lookbook = $images_lookbooksManager->insert(['chemin'=>$pathbd , 'label'=>$_REQUEST['label']]);
 		/*$this->show('images_sliders/lookbook', ['lookbook'=>$lookbook]);*/
 		$this->redirectToRoute('lookbook');
 	}
