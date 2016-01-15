@@ -4,7 +4,7 @@
 
 <?php if(isset($errorPass)) : ?>
 <div>
-	Login ou mot de passe incorrect !
+	Les 2 mots de passe ne correpondent pas !
 </div>
 <?php endif ?>
 

@@ -61,4 +61,13 @@ class DefaultController extends Controller
 		// on se déconnecte, on retourne à l'accueil
 		$this->redirectToRoute('home');
 	}
+
+	/**
+	 * Page d'accueil de l'administration
+	 */
+	public function admin()
+	{
+		$this->show('default/admin');
+	}
+
 }
