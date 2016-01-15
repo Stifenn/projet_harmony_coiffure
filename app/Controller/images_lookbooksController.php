@@ -11,6 +11,7 @@ class images_lookbooksController extends Controller
 	}
 
 	public function lookbook(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_lookbooksManager = new \Manager\images_lookbooksManager();
 		$lookbook = $images_lookbooksManager->findAll("chemin");
 		$this->show('images_lookbooks/lookbook', ['lookbook'=>$lookbook]);
@@ -19,6 +20,7 @@ class images_lookbooksController extends Controller
 
 	// function qui récupère les images pour le slider en DBB
 	public function insert_image_lookbook(){
+	$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 	// J'ai recu des données de formulaire
 	if ( isset($_POST['send'])) {
 
@@ -68,6 +70,7 @@ class images_lookbooksController extends Controller
 	}
 
 	public function delete_image_lookbook(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_lookbooksManager = New \Manager\images_lookbooksManager();
 		$id = $_REQUEST['id'];
 		$lookbook = $images_lookbooksManager->delete($id);

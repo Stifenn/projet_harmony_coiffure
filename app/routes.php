@@ -32,7 +32,16 @@
 		/*Routes pour la page commentaires*/
 
 		['GET',			'/admin/commentaires', 			'Commentaires#Commentaires',				'administration_commentaires'],
-		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires']
+		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
 		
+		/*ajout et suppression d'image_produits*/
+		['GET', 		'/admin/produits',	 			'produits#produits', 						'produits'],
+		['POST', 		'/admin/produitssubmit', 		'produits#insert_produits',					'produitssubmit'],
+		['POST', 		'/admin/produitsdelete', 		'produits#delete_produits',					'produitsdelete'],
+
+		/*ajout et suppression du nom et de la description des produits*/
+
+
+
 
 	);

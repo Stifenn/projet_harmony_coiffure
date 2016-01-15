@@ -8,6 +8,7 @@ class UserController extends Controller
 {
 	public function create_user()
 	{
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		// si tous les champs sont renseignés
 		if( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password-confirm']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) ) {
 			// on verifie si le password et le password-confirm sont égaux

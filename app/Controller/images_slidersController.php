@@ -11,6 +11,7 @@ class images_slidersController extends Controller
 	}
 
 	public function slider(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_slidersManager = new \Manager\images_slidersManager();
 		$slider = $images_slidersManager->findAll("chemin");
 		$this->show('images_sliders/slider', ['slider'=>$slider]);
@@ -19,6 +20,7 @@ class images_slidersController extends Controller
 
 	// function qui récupère les images pour le slider en DBB
 	public function insert_image_slider(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 	// J'ai recu des données de formulaire
 	if ( isset($_POST['send'])) {
 
@@ -68,6 +70,7 @@ class images_slidersController extends Controller
 	}
 
 	public function delete_image_slider(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_slidersManager = New \Manager\images_slidersManager();
 		$id = $_REQUEST['id'];
 		$slider = $images_slidersManager->delete($id);
