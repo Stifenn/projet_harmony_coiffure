@@ -15,13 +15,12 @@ class UserManager extends \W\Manager\Manager
 
 	public function getFicheClient($id)
 	{
-		$sql = "SELECT nom,prenom,date,description ". 
-		"FROM ". $this->table ." ,fiches_rdvs, prestations ". 
-		"WHERE ". $this->table .".id = :id ".
-		"AND users.id = fiches_rdvs.id_users ".
-		"AND fiches_rdvs.id = prestations.id_fiches_rdv";
+		$sql = "SELECT nom,prenom,users.id,date,description ". 
+		"FROM ". $this->table ." LEFT JOIN fiches_rdvs ON users.id = fiches_rdvs.id_users ".
+		"LEFT JOIN prestations ON fiches_rdvs.id = prestations.id_fiches_rdv".
+		" WHERE ". $this->table .".id = :id";
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(':id',$id);
+		$sth->bindValue(':id',$id,\PDO::PARAM_INT);
 		$sth->execute();
 		return $sth->fetchAll();
 		

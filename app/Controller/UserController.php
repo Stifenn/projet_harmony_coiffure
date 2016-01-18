@@ -52,4 +52,18 @@ class UserController extends Controller
 		$this->show('fiche/fiche_rdv', ['fiche' => $fiche]);
 	}
 
+	public function ajoutFiche()
+	{
+		var_dump($_REQUEST);
+		$fiches_rdvManager = new \Manager\Fiches_rdvsManager();
+		//$prestationManager = new \Manager\prestation_rdvsmanager();
+		$ajoutDate = $fiches_rdvManager->insert(['date' => $_REQUEST['date'],'id_users'=>$_REQUEST['id']]);
+		$date = $fiches_rdvManager->find(['date' => $_REQUEST['date']
+			])
+		//$ajoutPrestation = $prestationManager->insert(['name'=>$_REQUEST['nom'],'description'=>$_REQUEST['description']]);
+		//$this->show('fiche/fiche_rdv', ['ajout' => $ajout]);
+		//$this->redirectToRoute('fiche_client');
+		$this->show('fiche/ajoutFiche');
+	}
+
 }
