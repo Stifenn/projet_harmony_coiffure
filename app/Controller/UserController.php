@@ -34,10 +34,22 @@ class UserController extends Controller
 
 	function Recherche()
 	{
-		$name = $_REQUEST['name'];
+		
 		$usersManager = new \Manager\UserManager();
-		$recherche = $usersManager->findUsers($name);
-		$this->show('user/recherche',['recherche'=> $recherche]);
+
+		if(isset($_REQUEST['name']))
+		{
+			$recherche = $usersManager->findUsers($_REQUEST['name']);
+			$this->show('user/recherche',['recherche' => $recherche]);
+		}
+		$this->show('user/recherche');
+	}
+
+	public function fichesclient($id)
+	{
+		$usersManager = new \Manager\UserManager();
+		$fiche = $usersManager->getFicheClient($id);
+		$this->show('fiche/fiche_rdv', ['fiche' => $fiche]);
 	}
 
 }

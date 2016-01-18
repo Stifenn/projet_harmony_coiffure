@@ -14,7 +14,7 @@
 
 	
 		<?php foreach ($slider as $currentslider) : ?> 
-			<img src="<?= $currentslider['chemin'] ?>" alt="<?= $currentslider['label'] ?>" width="50%" height="50%" ><br>
+			<img src="<?= $this->assetUrl($currentslider['chemin']) ?>" alt="<?= $currentslider['label'] ?>" width="50%" height="50%" ><br>
 			<form action="<?= $this->url('sliderdelete')?>" method="POST" accept-charset="utf-8">
 				<input type="hidden" name="id" value="<?= $currentslider['id'] ?>">
 				<input type="submit" name="delete-file" value="Supprimer">

@@ -35,6 +35,7 @@
 		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
 
 		/*Routes pour la partie fiche client*/
-		['GET|POST', 		'/admin/recherche',				'User#recherche',							'recherche'],
+		['GET|POST', 	'/admin/recherche',				'User#recherche',							'recherche'],
+		['GET', 		'/admin/fiche/[:id]',			'User#fichesclient',					'fiche_client'],
 
 	);
