@@ -4,23 +4,23 @@
 
 
 <!-- formulaire pour l'image  -->
-
+<div class="form_left">
 	<form enctype="multipart/form-data" action="<?= $this->url('imagessubmit')?>" method="POST" accept-charset="utf-8">
 		<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+		<input type="text" class="form-control" name="label" value="" placeholder="nom de l'image"><br>
 		<input type="file" name="my-file" value="" placeholder="">
-		<input type="text" name="label" value="" placeholder="nom de l'image"><br>
 		<input type="submit" name="send" value="Ajouter">
 	</form>
-
-	
+</div>
+<div class="form_right">	
 	<?php foreach ($images as $currentsimages) : ?> 
-		<img src="<?= $this->assetUrl($currentsimages['chemin']) ?>" alt="<?= $currentsimages['label'] ?>" width="250" height="auto" ><br>
+		<img src="<?= $this->assetUrl($currentsimages['chemin']) ?>" alt="<?= $currentsimages['label'] ?>" width="200px" height="auto" ><br>
 		<form action="<?= $this->url('imagesdelete')?>" method="POST" accept-charset="utf-8">
 			<input type="hidden" name="id" value="<?= $currentsimages['id'] ?>">
-			<input type="submit" name="delete-file" value="Supprimer">
+			<input class="delete" type="submit" name="delete-file" value="x">
 		</form>
 	<?php endforeach ?>
-
+</div>
 	<a href="<?= $this->url('home') ?>">Accueil</a>
 
 <?php $this->stop('main_content') ?>

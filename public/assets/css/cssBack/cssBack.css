@@ -4,26 +4,108 @@ main
 	margin: auto;
 }
 
+.logo
+{
+	width: 60px;
+	height: 60px;
+	background-image: url("../../img/logo/logo.jpg");
+	background-size: 60px 60px;
+	float: left;
+	
+    margin-top: 10px;
+}
 header
 {
 	height: 80px;
 	background-color: ;
 }
 
+header nav
+{
+	margin-left: 120px;
+}
+
+header nav ul
+{
+	margin-top: 0px;
+} 
+
+
 header nav ul li
 {
 	list-style-type: none;
 	float: left;
-	margin-left: 25px;
+/*	margin-left: 25px;*/
+	margin-top: 15px;
 }
 
-section
+header nav ul li a
 {
-	height: 700px;
-	width: auto;
-	background-color: #A55A5A
+	text-decoration: none;
+	color: white;
 }
+
 .container
 {
 	background-color: #979797
 }
+
+section
+{
+	height: auto;
+	width: auto;
+	background-color: #CECECE
+}
+
+section h2
+{
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 25px;
+	font-size: 40px;
+}
+
+/*section img
+{
+	float: left;
+	margin-left: 40px;
+}*/
+
+.clearfix
+{
+	clear: both;
+
+}
+
+.form_left
+{
+	width: 30%;
+	float: left;
+}
+
+.form_right
+{
+	width: 70%;
+	float: left;
+}
+.btn-group
+{
+	float: left;
+	margin-top: 15px;
+	margin-left: 150px;
+}
+
+
+/*.form_right img
+{
+	float: left;
+	margin-left: 40px;
+}*/
+/*.delete
+{
+	left: 175px;
+    bottom: 134px;
+    position: relative;
+    opacity: 0.5;
+}*/
+

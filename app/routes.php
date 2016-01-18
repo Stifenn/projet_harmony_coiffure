@@ -18,8 +18,17 @@
 		/* user connexion */
 		['GET|POST', 	'/login', 						'Default#login', 							'login'],
 		['GET', 		'/logoff', 						'Default#logoff', 							'logoff'],
+		
+		/* acces a l'adminisatration */
 		['GET', 		'/admin', 						'Default#admin', 							'admin'],
-		['GET|POST', 	'/creation/compte', 			'User#create_user', 						'create_user'],
+		
+		/* user création de compte */
+		['GET|POST', 	'/creation/compte', 			'User#createUser', 							'create_user'],
+		
+		/* admin ou staff, gestion et création de compte */
+		['GET|POST', 	'/admin/comptes', 				'User#manage', 								'manage'],
+		['POST', 		'/admin/comptes/create', 		'User#userCreate', 							'user_create'],
+		['GET', 		'/admin/comptes/delete/[:id]', 	'User#userDelete', 							'user_delete'],
 
 	
 		
@@ -43,5 +52,7 @@
 		['GET', 		'/admin/images_sites',	 			'images_sites#images', 					'images'],
 		['POST', 		'/admin/images_sitessubmit', 		'images_sites#insert_images_sites',		'imagessubmit'],
 		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
+
+		
 
 	);
