@@ -15,17 +15,18 @@
 		<?php
 		// on n'affiche pas le compte admin
 		if ($user['role'] != 'admin') : ?>
-		<td><?= $user['nom'] ?></td>
-		<td><?= $user['prenom'] ?></td>
-		<td><?= $user['email'] ?></td>
-		<td><?= $user['role'] ?></td>
-		<td>
+			<td><?= $user['nom'] ?></td>
+			<td><?= $user['prenom'] ?></td>
+			<td><?= $user['email'] ?></td>
+			<td><?= $user['role'] ?></td>
+			<td>
 		<?php endif; ?>
 			<?php
-				// seul l'admin peut supprimer des comptes
-				if ($_SESSION['user']['role'] == 'admin') : ?>
-					<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>">Supprimer</a>
-			 <?php endif; ?>
+				if ($user['role'] != 'admin') :
+					// seul l'admin peut supprimer des comptes
+					if ($_SESSION['user']['role'] == 'admin') : ?>
+						<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>"><button type="button" id="delete-account">Supprimer</button></a>
+				<?php endif; endif; ?>
 		</td>
 	</tr>
 <?php endforeach ?>
@@ -42,10 +43,10 @@
 <form action="<?= $this->url('user_create') ?>" method="POST">
 	<input type="text" name="nom" placeholder="Nom" required />
 	<input type="text" name="prenom" placeholder="Prénom" required />
-	<input type="email" name="email" placeholder="Email" />
-	<input type="password" name="password" placeholder="Mot de passe" />
-	<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" />
-	<select name="role">
+	<input type="email" name="email" placeholder="Email" id="email" hidden />
+	<input type="password" name="password" placeholder="Mot de passe" id="password" hidden />
+	<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" id="password-confirm" hidden />
+	<select name="role" id="select-role">
 		<option value="client">Client</option>
 		<?php
 			// si on est l'admin on peut créer un compte employé (staff) sinon juste un compte client
