@@ -39,9 +39,9 @@
 		['POST', 		'/admin/produitssubmit', 		'produits#insert_produits',					'produitssubmit'],
 		['POST', 		'/admin/produitsdelete', 		'produits#delete_produits',					'produitsdelete'],
 
-		/*ajout et suppression du nom et de la description des produits*/
-
-
-
+		/*ajout et suppression des images de la page de présentation du site*/
+		['GET', 		'/admin/images_sites',	 			'images_sites#images', 					'images'],
+		['POST', 		'/admin/images_sitessubmit', 		'images_sites#insert_images_sites',		'imagessubmit'],
+		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
 
 	);

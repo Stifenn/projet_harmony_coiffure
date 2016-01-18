@@ -2,6 +2,6 @@
 
 <?php $this->start('main_content') ?>
 
-<a href="<?= $this->url('image_produits') ?>">Retour</a>
+<a href="<?= $this->url('produits') ?>">Retour</a>
 
 <?php $this->stop('main_content') ?>

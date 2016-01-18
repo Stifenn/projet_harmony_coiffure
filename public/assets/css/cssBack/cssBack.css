@@ -1,0 +1,29 @@
+main
+{
+	width: 980px;
+	margin: auto;
+}
+
+header
+{
+	height: 80px;
+	background-color: ;
+}
+
+header nav ul li
+{
+	list-style-type: none;
+	float: left;
+	margin-left: 25px;
+}
+
+section
+{
+	height: 700px;
+	width: auto;
+	background-color: #A55A5A
+}
+.container
+{
+	background-color: #979797
+}
