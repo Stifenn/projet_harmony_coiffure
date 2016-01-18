@@ -12,12 +12,20 @@
 	</tr>
 <?php foreach($users as $user) : ?>
 	<tr>
+		<?php
+		// on n'affiche pas le compte admin
+		if ($user['role'] != 'admin') : ?>
 		<td><?= $user['nom'] ?></td>
 		<td><?= $user['prenom'] ?></td>
 		<td><?= $user['email'] ?></td>
 		<td><?= $user['role'] ?></td>
 		<td>
-			<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>">Supprimer</a>
+		<?php endif; ?>
+			<?php
+				// seul l'admin peut supprimer des comptes
+				if ($_SESSION['user']['role'] == 'admin') : ?>
+					<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>">Supprimer</a>
+			 <?php endif; ?>
 		</td>
 	</tr>
 <?php endforeach ?>
@@ -29,17 +37,21 @@
 		<div>
 			Les 2 mots de passe ne correpondent pas !
 		</div>
-<?php endif ?>
+<?php endif; ?>
 
-<form action="<?= $this->url('user_create') ?>" method="POST" id="create-user">
-	<input type="text" name="nom" placeholder="Nom" required>
-	<input type="text" name="prenom" placeholder="prenom" required>
-	<input type="email" name="email" placeholder="email" required>
-	<input placeholder="Mot de passe" type="password" name="password" required>
-	<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" required>
+<form action="<?= $this->url('user_create') ?>" method="POST">
+	<input type="text" name="nom" placeholder="Nom" required />
+	<input type="text" name="prenom" placeholder="Prénom" required />
+	<input type="email" name="email" placeholder="Email" />
+	<input type="password" name="password" placeholder="Mot de passe" />
+	<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" />
 	<select name="role">
+		<option value="client">Client</option>
+		<?php
+			// si on est l'admin on peut créer un compte employé (staff) sinon juste un compte client
+			if ($_SESSION['user']['role'] == 'admin') : ?>
 		<option value="staff">Employé</option>
-		<option value="admin">Administrateur</option>
+		<?php endif; ?>
 	</select>
 	<input type="submit" value="Ajouter">
 </form>

@@ -28,7 +28,7 @@
 		/* admin ou staff, gestion et création de compte */
 		['GET|POST', 	'/admin/comptes', 				'User#manage', 								'manage'],
 		['POST', 		'/admin/comptes/create', 		'User#userCreate', 							'user_create'],
-		['POST', 		'/admin/comptes/delete', 		'User#userDelete', 							'user_delete'],
+		['GET', 		'/admin/comptes/delete/[:id]', 	'User#userDelete', 							'user_delete'],
 		
 		
 		/*Routes pour la page tarifs*/

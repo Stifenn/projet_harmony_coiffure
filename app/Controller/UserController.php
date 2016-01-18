@@ -46,12 +46,12 @@ class UserController extends Controller
 		$this->show('user/manage', ['users' => $users]);
 	}
 
-	//création d'un compte par l'admin
+	// création d'un compte par l'admin ou un employé (staff)
 	public function userCreate()
 	{
-		$this->allowTo('admin');
+		$this->allowTo(['admin', 'staff']);
 		// si tous les champs sont renseignés
-		if( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password-confirm']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) && ($_POST['role'] == 'admin' || $_POST['role'] == 'staff')) {
+		if( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password-confirm']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) && ($_POST['role'] == 'client' || $_POST['role'] == 'staff')) {
 			// on verifie si le password et le password-confirm sont égaux
 			if ($_POST['password'] == $_POST['password-confirm']) {
 		
@@ -71,5 +71,19 @@ class UserController extends Controller
 
 	// on va sur la page de gestion des utilisateurs
 	$this->show('user/manage');
+	}
+
+	// suppression d'un compte par l'admin seulement
+	public function userDelete($userId)
+	{
+		$this->allowTo('admin');
+
+		if(!is_numeric($userId)) {
+			$this->redirectToRoute('manage');
+		}
+
+		$usersManager = new \Manager\UserManager();
+		$usersManager->delete($userId);
+		$this->redirectToRoute('manage');
 	}
 }

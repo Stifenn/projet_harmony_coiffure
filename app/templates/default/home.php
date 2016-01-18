@@ -18,8 +18,8 @@
 		<div id="user">
 			<?= $_SESSION['user']['nom'] ?> (<em><?= $_SESSION['user']['email'] ?></em>)<br>
 			<?php
-				// si on est admin on affiche un lien vers la gestion
-				if ($_SESSION['user']['role'] == 'admin') : ?>
+				// si on est admin ou un employé, on affiche un lien vers la gestion
+				if ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['role'] == 'staff') : ?>
 					<a href="<?= $this->url('admin') ?>">Gestion</a>
 				<?php endif;
 				// si on est connecté on propose un lien de déconnexion ?>
