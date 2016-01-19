@@ -25,6 +25,11 @@
 		/* user création de compte */
 		['GET|POST', 	'/creation/compte', 			'User#createUser', 							'create_user'],
 		
+		/* acces à son profil, modification, suppression */
+		['GET', 		'/profil', 						'User#profil', 								'profil'],
+		['POST', 		'/profil/update/[:id]', 		'User#updateUser', 							'update_user'],
+		['GET', 		'/profil/delete/[:id]', 		'User#deleteUser', 							'delete_user'],
+
 		/* admin ou staff, gestion et création de compte */
 		['GET|POST', 	'/admin/comptes', 				'User#manage', 								'manage'],
 		['POST', 		'/admin/comptes/create', 		'User#userCreate', 							'user_create'],

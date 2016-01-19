@@ -16,11 +16,11 @@ $(function(){
 		}
 	});
 
-	// fonction pour la confirmation sur la suppression d'un compte
+	// fonction pour la confirmation sur la suppression d'un compte par l'admin
 	$("#delete-account").click(function(e) {
 		result = confirm('Voulez-vous vraiment supprimer cet utilisateur ?');
 		if (!result) {
-			// si non on arrête
+			// si réponse est "non", on arrête
 			e.preventDefault();
 		};
 	});

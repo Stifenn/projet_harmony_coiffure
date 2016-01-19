@@ -32,14 +32,6 @@
 <?php endforeach ?>
 </table>
 
-<?php 
-	// si les 2 mots de passe ne correpondent pas
-	if(isset($errorPass)) : ?>
-		<div>
-			Les 2 mots de passe ne correpondent pas !
-		</div>
-<?php endif; ?>
-
 <form action="<?= $this->url('user_create') ?>" method="POST">
 	<input type="text" name="nom" placeholder="Nom" required />
 	<input type="text" name="prenom" placeholder="Prénom" required />

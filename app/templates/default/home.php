@@ -4,7 +4,7 @@
 
 	<h2>Accueil Front</h2>
 
-<?php 
+<?php	
 	// Si il n'y a pas de session active j'affiche le lien de connexion
 	if (!isset($_SESSION['user'])) : ?>
 		<a href="<?= $this->url('login') ?>">Se connecter</a> | 
@@ -20,9 +20,10 @@
 			<?php
 				// si on est admin ou un employé, on affiche un lien vers la gestion
 				if ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['role'] == 'staff') : ?>
-					<a href="<?= $this->url('admin') ?>">Gestion</a>
+					<a href="<?= $this->url('admin') ?>">Gestion</a> | 
 				<?php endif;
-				// si on est connecté on propose un lien de déconnexion ?>
+				// si on est connecté on propose un lien son profil et de déconnexion ?>
+			<a href="<?= $this->url('profil') ?>">Profil</a> | 
 			<a href="<?= $this->url('logoff') ?>">Déconnexion</a>
 		</div>
 <?php endif; ?>
