@@ -6,9 +6,9 @@ class UserManager extends \W\Manager\Manager
 {
 	public function findUsers($name)
 	{
-		$sql = "SELECT * FROM ". $this->table ." WHERE nom = :name";
+		$sql = "SELECT * FROM ". $this->table ." WHERE nom LIKE :name";
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(':name',$name);
+		$sth->bindValue(':name','%'.$name.'%');
 		$sth->execute();
 		return $sth->fetchAll();
 	}

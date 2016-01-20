@@ -39,4 +39,7 @@
 		['GET', 		'/admin/fiche/[:id]',			'User#fichesclient',						'fiche_client'],
 		['POST',		'/admin/fiche/ajout',			'Fiches_rdvs#ajoutFiche',					'ajout_fiche'],
 		['GET|POST',	'/admin/prestation/ajout/[:id]','Prestations#prestation',					'prestation'],
+	
+		/*facebook*/
+		['GET',			'/facebook',					'Facebook#facebook',						'facebook'],
 	);

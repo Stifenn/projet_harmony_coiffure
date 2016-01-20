@@ -1,7 +1,7 @@
 <?php $this->layout('layoutBack', ['title' => 'ajout d\'une prestation']) ?>
 
 <?php $this->start('main_content') ?>
-	 <?= $ficheId ?>
+	 
 	<form action="<?=$this->url('prestation', ['id' => $ficheId])?>" method="post" accept-charset="utf-8">
 		<input type="text" name="nom" placeholder="Nom">
 		<input type="hidden" name="idFiche" value="<?=$ficheId;?>">

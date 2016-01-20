@@ -35,11 +35,16 @@ class TarifsController extends Controller
 	function AjouterTarifs()
 	{	
 		$TarifsManager = new \Manager\TarifsManager();
-		$AjouterTarifs = $TarifsManager->insert([
-			'name' => $_REQUEST['name'],
-			'prix_femmes' => $_REQUEST['prix_femmes'], 
-			'prix_hommes' =>$_REQUEST['prix_hommes']
-		]);
-		$this->redirectToRoute('administration_tarifs');
+		if(!empty($_REQUEST['name']) && !empty($_REQUEST['prix_femmes']) && !empty($_REQUEST['prix_hommes']))
+		{
+			$AjouterTarifs = $TarifsManager->insert([
+				'name' => $_REQUEST['name'],
+				'prix_femmes' => $_REQUEST['prix_femmes'], 
+				'prix_hommes' =>$_REQUEST['prix_hommes']
+			]);
+			$this->redirectToRoute('administration_tarifs');
+		}else{
+			$this->redirectToRoute('administration_tarifs');
+		}	
 	}
 }
