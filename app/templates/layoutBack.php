@@ -15,24 +15,26 @@
 	<main>
 		<div class="container">
 			<header>
-			<nav>
-				<div class="logo"></div>
-				<div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    	Images <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-						<li><a href="<?= $this->url('slider') ?>" title="">Slider</a></li>
-						<li><a href="<?= $this->url('lookbook') ?>" title="">Lookbook</a></li>
-						<li><a href="<?= $this->url('images') ?>" title="">Images de presentation du site</a></li>
-						<li><a href="<?= $this->url('produits') ?>" title="">Images des produits</a></li>
-					</ul>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="logo"></div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    	Images <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="<?= $this->url('slider') ?>" title="">Image du Slider</a></li>
+							<li><a href="<?= $this->url('lookbook') ?>" title="">photos du Lookbook</a></li>
+							<li><a href="<?= $this->url('images') ?>" title="">Images de presentation du salon</a></li>
+							<li><a href="<?= $this->url('produits') ?>" title="">Images des produits</a></li>
+						</ul>
+					</div>
+						<ul>
+							<li><a class="btn btn-default" href="<?= $this->url('administration_tarifs') ?>">Tarifs</a></li>
+							<li><a class="btn btn-default"href="<?= $this->url('administration_commentaires') ?>">Commentaires</a></li>
+							<li><a class="btn btn-default"href="<?= $this->url('manage') ?>">Gestion des comptes utilisateurs</a></li>
+						</ul>
 				</div>
-					<ul>
-						<li><a class="btn btn-default" href="<?= $this->url('administration_tarifs') ?>">Tarifs</a></li>
-						<li><a class="btn btn-default"href="<?= $this->url('administration_commentaires') ?>">Commentaires</a></li>
-						<li><a class="btn btn-default"href="<?= $this->url('manage') ?>">Gestion des comptes utilisateurs</a></li>
-					</ul>
 			</nav>
 				<div class="clearfix"></div>
 				
