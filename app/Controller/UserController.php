@@ -49,6 +49,6 @@ class UserController extends Controller
 	{
 		$usersManager = new \Manager\UserManager();
 		$fiche = $usersManager->getFicheClient($id);
-		$this->show('fiche/fiche_rdv', ['fiche' => $fiche]);
+		$this->show('fiche/fiche_rdv', ['fiche' => $fiche, 'clientId' => $id]);
 	}
 }
