@@ -15,5 +15,13 @@
 	<input type="password" name="password" id="password-input" placeholder="Password" required>
 	<button name="login-submit" type="submit">Connexion</button>
 </form>
+
+<label><input type="checkbox" name="checkbox" id="checkboxlost" />Mot de passe perdu ?</label>
+<form action="<?= $this->url('lost_password') ?>" method="POST" hidden id="lost-pass">
+	<input type="email" name="email" placeholder="Votre Email" required>
+	<button name="lost-submit" type="submit">Envoyer</button>
+</form>
+
+
 <a href="<?= $this->url('home') ?>">Retour accueil</a>
 <?php $this->stop('main_content') ?>
