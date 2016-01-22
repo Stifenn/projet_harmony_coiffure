@@ -4,6 +4,7 @@
 
 <table>
 	<tr>
+		<th>Numéro client</th>
 		<th>Nom</th>
 		<th>Prénom</th>
 		<th>Email</th>
@@ -15,6 +16,7 @@
 		<?php
 		// on n'affiche pas le compte admin
 		if ($user['role'] != 'admin') : ?>
+			<td><?= $user['id'] ?></td>
 			<td><?= $user['nom'] ?></td>
 			<td><?= $user['prenom'] ?></td>
 			<td><?= $user['email'] ?></td>
@@ -25,7 +27,7 @@
 				if ($user['role'] != 'admin') :
 					// seul l'admin peut supprimer des comptes
 					if ($_SESSION['user']['role'] == 'admin') : ?>
-						<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>"><button type="button" id="delete-account">Supprimer</button></a>
+						<a href="<?= $this->url('user_delete', ['id' => $user['id']]) ?>"><button type="button" class="delete-account">Supprimer</button></a>
 				<?php endif; endif; ?>
 		</td>
 	</tr>

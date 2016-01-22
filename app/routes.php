@@ -22,13 +22,15 @@
 		/* acces a l'adminisatration */
 		['GET', 		'/admin', 						'Default#admin', 							'admin'],
 		
-		/* user création de compte */
+		/* user création de compte ou récupération */
 		['GET|POST', 	'/creation/compte', 			'User#createUser', 							'create_user'],
+		['POST', 		'/creation/compte/recup', 		'User#recupUser', 							'recup_user'],
+		['POST', 		'/creation/compte/recup/[:id]', 'User#updateRecupUser', 					'update_recup_user'],
 		
 		/* acces à son profil, modification, suppression */
 		['GET', 		'/profil', 						'User#profil', 								'profil'],
 		['POST', 		'/profil/update/[:id]', 		'User#updateUser', 							'update_user'],
-		['GET', 		'/profil/delete/[:id]', 		'User#deleteUser', 							'delete_user'],
+		['POST', 		'/profil/delete/[:id]', 		'User#deleteUser', 							'delete_user'],
 
 		/* admin ou staff, gestion et création de compte */
 		['GET|POST', 	'/admin/comptes', 				'User#manage', 								'manage'],

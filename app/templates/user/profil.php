@@ -18,9 +18,12 @@
 		<input type="submit" value="Mettre à jour" />
 	</form>
 	<?php
-		// un lien de suppression du compte par l'utilisation (client) seulement
+		// formulaire de suppression du compte par l'utilisation (client) seulement
 		if ($_SESSION['user']['role'] == 'client') : ?>
-			<a href="<?= $this->url('delete_user', ['id' => $user['id']]) ?>"><button type="button" id="delete-client">Supprimer</button></a>
+			<form action="<?= $this->url('delete_user', ['id' => $user['id']]) ?>" method="POST">
+				<input type="password" name="password-client" placeholder="Votre mot de passe actuel" require />
+				<input type="submit" id="delete-client" value="Supprimer" />
+			</form>
 	<?php endif; ?>
 	<a href="<?= $this->url('home') ?>">Retour à l'accueil</a>
 

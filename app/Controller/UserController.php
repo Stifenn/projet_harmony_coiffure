@@ -119,7 +119,7 @@ class UserController extends Controller
 			$this->redirectToRoute('profil');
 		}
 
-		// je récupère la ligne en bdd
+		// je récupère la ligne en DB
 		$userManager = new \Manager\UserManager();
 		$currentUser = $userManager->find($userId);
 
@@ -172,15 +172,91 @@ class UserController extends Controller
 	// en fait on fait juste un update du mdp et email pour ne pas perdre le suivie des prestations
 	public function deleteUser($userId)
 	{
+		// je récupère la ligne en DB
+		$userManager = new \Manager\UserManager();
+		$currentUser = $userManager->find($userId);
+
 		if(!is_numeric($userId)) {
 			$this->redirectToRoute('profil');
 		}
 
-		$usersManager = new \Manager\UserManager();
-		$usersManager->update([
-						'email' => NULL,
-						'password' => NULL],
-						$userId);
-		$this->redirectToRoute('logoff');
+		// je compare le mdp rentré par l'utilisateur et celui en DB
+		if ( password_verify($_POST['password-client'], $currentUser['password']) ) {
+			// si c'est true
+			// je supprime le compte
+			$userManager->delete($userId);
+			// puis je le recré avec le meme id, nom et prenom mais sans pass ni email
+			$userManager->insert([
+							'id' => $userId,
+							'nom' => $currentUser['nom'],
+							'prenom' => $currentUser['prenom'],
+							'role' => 'client',
+						]);
+			$this->redirectToRoute('logoff');
+		}
+		$this->show('user/profil_error', ['errorPass' => true]);
 	}
+
+	// récupération du compte créée par l'admin (de base sans mail ni mdp)
+	public function recupUser()
+	{
+		// si le champs num client est rempli
+		if ( isset($_POST['num-client']) && !empty($_POST['num-client'])) {
+			$userId = $_POST['num-client'];
+		} else {
+			$this->redirectToRoute('create_user');
+		}
+
+		if(!is_numeric($userId)) {
+			$this->redirectToRoute('create_user');
+		}
+		// je vérifie si l'id existe en DB
+		$userManager = new \Manager\UserManager();
+		$idExist = $userManager->idExists($userId);
+		// si oui je recup les infos
+		if ($idExist) {
+			$currentUser = $userManager->find($userId);
+			// je verifie si les champs nom et prenom sont remplis
+			if ( isset($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom']) ) {
+				
+				$nom = trim(mb_strtolower($_POST['nom'], 'UTF-8'));
+				$prenom = trim(mb_strtolower($_POST['prenom'], 'UTF-8'));
+				$nomDB = mb_strtolower($currentUser['nom'], 'UTF-8');
+				$prenomDB = mb_strtolower($currentUser['prenom'], 'UTF-8');
+
+				if ($nom == $nomDB && $prenom == $prenomDB) {
+					$this->show('user/recup_user', ['currentUser' => $currentUser]);
+				}
+			}
+			$this->redirectToRoute('create_user');
+		}
+		$this->redirectToRoute('create_user');
+	}
+
+	public function updateRecupUser($userId)
+	{
+		// je récupère la ligne en DB
+		$userManager = new \Manager\UserManager();
+		$currentUser = $userManager->find($userId);
+
+		// je regarde si l'utilisateur a mis les 2 même mot de passe
+		if ( isset($_POST['password']) && isset($_POST['password-confirm']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) ) {
+			// je compare si les mots de passe sont egaux
+			if ( $_POST['password'] == $_POST['password-confirm']) {
+				// si oui, je teste les autres champs
+				if ( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) ) {
+					$userManager->update([
+								'nom' => $_POST['nom'],
+								'prenom' => $_POST['prenom'],
+								'email' => $_POST['email'],
+								'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)],
+								$userId);
+					$this->redirectToRoute('login');
+				}
+			}
+			// les mdp sont différents
+			$this->show('user/recup_error', ['errorPass' => true]);	
+		}
+	}
+
 }

@@ -1,7 +1,7 @@
 $(function(){
 	console.log('DOMContentLoaded : OK');
 
-	// function sur le changement du select id #select-role dans manage.php
+	// fonction sur le changement du select id #select-role dans manage.php
 	$('#select-role').change(function() {
 		// si la valeur de l'option est staff
 		if ( $(this).val() == 'staff' ) {
@@ -17,7 +17,7 @@ $(function(){
 	});
 
 	// fonction pour la confirmation sur la suppression d'un compte par l'admin
-	$("#delete-account").click(function(e) {
+	$(".delete-account").click(function(e) {
 		result = confirm('Voulez-vous vraiment supprimer cet utilisateur ?');
 		if (!result) {
 			// si réponse est "non", on arrête

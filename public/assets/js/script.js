@@ -10,4 +10,18 @@ $(function(){
 		};
 	});
 
+	// fonction qui affime l'un ou l'autre formulaire de create_user.php
+	$(".choix").click(function() {
+		// si la valeur est oui
+		if ( $(this).val() == 'oui' ) {
+			$('#recup-compte').show();
+			$('#create-compte').hide();
+
+		// si la valeur est non
+		} else if ( $(this).val() == 'non' ) {
+			$('#recup-compte').hide();
+			$('#create-compte').show();
+		}
+	});
+
 });
