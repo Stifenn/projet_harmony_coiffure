@@ -14,15 +14,5 @@ class images_sitesManager extends  Manager
 		$sth->bindValue(':label' , $label);
 		$sth->bindValue(':position', $position);
 		return $sth->execute();
-
-
-	/*public function update_image($chemin, $label, $position){
-
-		$sql= "UPDATE ". $this->table ." SET chemin = :chemin, label = :label WHERE position = ':position'";
-		$stmt = $this->dbh->prepare($sql);
-		$stmt->bindValue(':chemin', $chemin);
-		$stmt->bindValue(':label' , $label);
-		$stmt->bindValue(':position', $position);
-		$stmt->execute();*/
 	}
 }

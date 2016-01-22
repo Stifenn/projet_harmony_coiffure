@@ -13,13 +13,15 @@ class images_lookbooksController extends Controller
 	public function lookbook(){
 		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_lookbooksManager = new \Manager\images_lookbooksManager();
-		$lookbook = $images_lookbooksManager->findAll("chemin");
+		$lookbook = $images_lookbooksManager->findAll("numero");
 		$this->show('images_lookbooks/lookbook', ['lookbook'=>$lookbook]);
 	}
 
 
 	// function qui récupère les images pour le slider en DBB
 	public function insert_image_lookbook(){
+		var_dump($_POST);
+		die();
 	$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 	// J'ai recu des données de formulaire
 	if ( isset($_POST['send'])) {
@@ -64,17 +66,10 @@ class images_lookbooksController extends Controller
 		}
 	}
 		$images_lookbooksManager = New \Manager\images_lookbooksManager();
-		$lookbook = $images_lookbooksManager->insert(['chemin'=>$pathbd , 'label'=>$_REQUEST['label']]);
-		/*$this->show('images_sliders/lookbook', ['lookbook'=>$lookbook]);*/
-		$this->redirectToRoute('lookbook');
-	}
-
-	public function delete_image_lookbook(){
-		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
-		$images_lookbooksManager = New \Manager\images_lookbooksManager();
-		$id = $_REQUEST['id'];
-		$lookbook = $images_lookbooksManager->delete($id);
-		/*$this->show('images_sliders/lookbook', ['lookbook'=>$lookbook]);*/
-		$this->redirectToRoute('lookbook');
+		var_dump($_REQUEST['numero']);
+		die();
+		$lookbook = $images_lookbooksManager->update_image_lookbook($pathbd ,$_REQUEST['label'], $_REQUEST['numero']);
+		$this->show('images_lookbooks/lookbook', ['lookbook'=>$lookbook]);
+/*		$this->redirectToRoute('lookbook');*/
 	}
 }

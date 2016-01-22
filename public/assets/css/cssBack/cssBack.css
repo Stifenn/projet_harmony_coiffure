@@ -3,10 +3,20 @@ main
 	width: 980px;
 	margin: auto;
 }
+
+
+/*utility*/
+.clearfix
+{
+	clear: both;
+
+}
+
 /*style du header*/
 header
 {
 	height: 80px;
+	margin-top: 20px;
 }
 
 .logo
@@ -19,7 +29,7 @@ header
     margin-top: 10px;
 }
 
-body > main > div > header > nav > div > div.logo
+div.logo
 {
 	margin-left: 120px;
 	margin-top: 0px;
@@ -60,7 +70,7 @@ header nav ul li a
 
 section
 {
-	height: 100%;
+	height: 700px;
 	width: auto;
 	background-color: #CECECE
 }
@@ -101,7 +111,7 @@ body > main > div > section > div.form_left > form > input[type="submit"]:nth-ch
 {
 	margin-top: 30px;	
 }
-/*affichage des images de presentation du salon*/
+/*style de la page de presentation du salon*/
 
 .top
 {
@@ -128,11 +138,17 @@ body > main > div > section > div.form_left > form > input[type="submit"]:nth-ch
 	margin-right: 50px;
 }
 
-/*style du lookbook*/
+/*style de la page du lookbook*/
+
+body > main > div > section > h2
+{
+	margin-left: 0px;
+}
 
 #lookbook
 {
-	margin-top: 40px;
+	margin-top: 60px;
+	margin-left: 200px;
 }
 
 #lookbook img
@@ -140,21 +156,14 @@ body > main > div > section > div.form_left > form > input[type="submit"]:nth-ch
 	border-radius: 50%;
 	border:1px solid white;
 	width: 150px;
-	height: auto;
+	height: 150px;
+	margin-bottom: 20px;
 }
 
 .image_lookbook
 {
 	float: left;
 	margin-left: 25px;
-}
-
-
-/*utility*/
-.clearfix
-{
-	clear: both;
-
 }
 
 body > main > div > section > div.form_left > form > input.form-control
@@ -170,3 +179,76 @@ body > main > div > section > div.form_left > form > input.btn.btn-default
 {
 	margin-top: 30px;
 }
+
+/*fancybox*/
+.hidden {
+ display: none;   
+}
+.fancybox-title a {
+ color: #fff;        
+}
+body {
+ padding: 20px;   
+}
+
+#title-1
+{
+	margin-top: 50px;
+}
+
+/*style de la page du slider*/
+
+
+
+body > main > div > section > div > div.form_left > form > input[type="file"]:nth-child(2)
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > input.form-control
+{
+	width: 300px;
+}
+
+body > main > div > section > div > div.form_left > form > input.form-control
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > select
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > input.btn.btn-default
+{
+	margin-top: 25px;
+}
+.image_slider_back
+{
+	float: left;
+	margin-left: 25px;
+	margin-top: 50px;
+}
+
+/*style de la page des produits*/
+
+
+#image_produit
+{
+	float: left;
+	margin-left: 80px;
+	margin-bottom: 25px;
+}
+
+#image_produit:first-child
+{
+	margin-top: 30px;
+}
+
+.image_produit_description
+{
+	text-align: center;
+	margin-top: 80px;
+}
+

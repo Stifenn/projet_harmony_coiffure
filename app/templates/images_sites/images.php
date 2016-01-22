@@ -5,7 +5,7 @@
 
 
 <!-- formulaire pour l'image  -->
-
+<div class="images_back">
 	<div class="form_left">	
 
 		<form enctype="multipart/form-data" action="<?= $this->url('imagessubmit')?>" method="POST" accept-charset="utf-8">
@@ -31,7 +31,7 @@
 		</div>	
 		<?php endforeach ?>
 	</div>
-
+</div>
 	<a href="<?= $this->url('home') ?>">Accueil</a>
 
 <?php $this->stop('main_content') ?>

@@ -14,7 +14,7 @@ class produitsController extends Controller
 
 		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */
 		$produitsManager = new \Manager\produitsManager();
-		$produits = $produitsManager->findAll("chemin_image");
+		$produits = $produitsManager->findAll("id");
 		$this->show('produits/produits', ['produits'=>$produits]);
 	}
 
@@ -26,7 +26,7 @@ class produitsController extends Controller
 	if ( isset($_POST['send'])) {
 
 		// je teste si le label n'est pas vide
-		if (!empty($_POST['label_image']) && !empty($_POST['nom']) && !empty($_POST['description']) && !empty($_FILES['my-file'])) {
+		if (!empty($_POST['label']) && !empty($_POST['nom']) && !empty($_POST['description']) && !empty($_FILES['my-file'])) {
 
 			// Vérifier si le téléchargement du fichier n'a pas été interrompu
 			if ($_FILES['my-file']['error'] != UPLOAD_ERR_OK) {
@@ -53,7 +53,7 @@ class produitsController extends Controller
 				    $chemin = sha1_file($_FILES['my-file']['tmp_name']) . '.' . $extFoundInArray;
 				    $path = 'assets/img/image_produits/' . $chemin;
 				    $pathbd = 'img/image_produits/' . $chemin;
-				    $label = $_POST['label_image'];
+				    $label = $_POST['label'];
 					$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 					if(!$moved) {
 						echo 'Erreur lors de l\'enregistrement';
@@ -67,17 +67,8 @@ class produitsController extends Controller
 		}
 	}
 		$produitsManager = New \Manager\produitsManager();
-		$produits = $produitsManager->insert(['chemin_image'=>$pathbd, 'label_image'=>$_REQUEST['label_image'], 'nom'=>$_REQUEST['nom'], 'description'=>$_REQUEST['description']]);
-/*		$this->show('produits/image_produits', ['image_produits'=>$image_produits]);*/
-		$this->redirectToRoute('produits');
-	}
-
-	public function delete_produits(){
-		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */
-		$produitsManager = New \Manager\produitsManager();
-		$id = $_REQUEST['id'];
-		$produits = $produitsManager->delete($id);
-/*		$this->show('produits/image_produits', ['image_produits'=>$image_produits]);*/
+		$produits = $produitsManager->update_image_produit( $pathbd, $_REQUEST['label'], $_REQUEST['nom'], $_REQUEST['description'], $_REQUEST['select'] );
+/*		$this->show('produits/produits', ['image_produits'=>$produits]);*/
 		$this->redirectToRoute('produits');
 	}
 }

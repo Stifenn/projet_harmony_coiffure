@@ -68,10 +68,7 @@ class images_sitesController extends Controller
 	}
 
 		$images_sitesManager = New \Manager\images_sitesManager();
-		var_dump($_REQUEST);
-		echo $pathbd;
 		$images = $images_sitesManager->update_image_site( $pathbd, $_REQUEST['label'], $_REQUEST['select'] );
-		var_dump($images);
 /*		$this->show('images_sites/images', ['images'=>$images]);*/
 		$this->redirectToRoute('images');
 	}
