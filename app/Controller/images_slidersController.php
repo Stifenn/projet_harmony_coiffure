@@ -11,14 +11,16 @@ class images_slidersController extends Controller
 	}
 
 	public function slider(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$images_slidersManager = new \Manager\images_slidersManager();
-		$slider = $images_slidersManager->findAll("chemin");
+		$slider = $images_slidersManager->findAll("id");
 		$this->show('images_sliders/slider', ['slider'=>$slider]);
 	}
 
 
 	// function qui récupère les images pour le slider en DBB
 	public function insert_image_slider(){
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 	// J'ai recu des données de formulaire
 	if ( isset($_POST['send'])) {
 
@@ -48,7 +50,8 @@ class images_slidersController extends Controller
 			    } else {
 				    // Renommer nom du fichier
 				    $chemin = sha1_file($_FILES['my-file']['tmp_name']) . '.' . $extFoundInArray;
-				    $path = 'img/' . $chemin;
+				    $path = 'assets/img/slider/' . $chemin;
+				    $pathbd = 'img/slider/' . $chemin;
 				    $label = $_POST['label'];
 					$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 					if(!$moved) {
@@ -61,15 +64,7 @@ class images_slidersController extends Controller
 		}
 	}
 		$images_slidersManager = New \Manager\images_slidersManager();
-		$slider = $images_slidersManager->insert(['chemin'=>$path , 'label'=>$_REQUEST['label']]);
-		/*$this->show('images_sliders/slider', ['slider'=>$slider]);*/
-		$this->redirectToRoute('slider');
-	}
-
-	public function delete_image_slider(){
-		$images_slidersManager = New \Manager\images_slidersManager();
-		$id = $_REQUEST['id'];
-		$slider = $images_slidersManager->delete($id);
+		$slider = $images_slidersManager->update_image_slider($pathbd ,$_REQUEST['label'], $_REQUEST['select']);
 		/*$this->show('images_sliders/slider', ['slider'=>$slider]);*/
 		$this->redirectToRoute('slider');
 	}

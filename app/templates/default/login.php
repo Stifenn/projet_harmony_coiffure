@@ -1,11 +1,14 @@
 <?php $this->layout('layout', ['title' => 'Connexion']) ?>
 <?php $this->start('main_content') ?>
 	
-<?php if(isset($errorConnection)) : ?>
-<div>
-	Login ou mot de passe incorrect !
-</div>
+<?php
+	// si l'email ou le mot de passe est faux
+	if(isset($errorConnection)) : ?>
+		<div>
+			Email ou mot de passe incorrect !
+		</div>
 <?php endif ?>
+
 <form method="POST">
 	<h2>Connexion</h2>
 	<input type="email" name="email" id="email-input" placeholder="Email" required>
