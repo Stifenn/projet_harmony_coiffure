@@ -44,6 +44,8 @@
 		/*Routes pour la page commentaires*/
 		['GET',			'/admin/commentaires', 			'Commentaires#Commentaires',				'administration_commentaires'],
 		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
+
+		['GET',			'/google',						'GoogleMaps#googlemaps',						'googlemap'],
 		
 		/*ajout et suppression d'image_produits*/
 		['GET', 		'/admin/produits',	 			'produits#produits', 						'produits'],
@@ -54,6 +56,7 @@
 		['GET', 		'/admin/images_sites',	 			'images_sites#images', 					'images'],
 		['POST', 		'/admin/images_sitessubmit', 		'images_sites#insert_images_sites',		'imagessubmit'],
 		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
+
 
 		
 
