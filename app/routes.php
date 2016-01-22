@@ -4,7 +4,6 @@
 
 
 		['GET', 		'/', 							'Default#home', 							'home'],
-
 		/*Slider*/
 		['GET', 		'/admin/slider',	 			'images_sliders#slider', 					'slider'],
 		['POST', 		'/admin/slidersubmit', 			'images_sliders#insert_image_slider',		'slidersubmit'],
@@ -37,7 +36,6 @@
 		['POST', 		'/admin/comptes/create', 		'User#userCreate', 							'user_create'],
 		['GET', 		'/admin/comptes/delete/[:id]', 	'User#userDelete', 							'user_delete'],
 		
-		
 		/*Routes pour la page tarifs*/
 		['GET',			'/admin/tarifs', 				'Tarifs#tarifs' , 							'administration_tarifs'],
 		['POST',		'/admin/modifier/[:id]', 		'Tarifs#modifierTarifs',					'modifier_tarifs'],
@@ -45,7 +43,18 @@
 
 		/*Routes pour la page commentaires*/
 		['GET',			'/admin/commentaires', 			'Commentaires#Commentaires',				'administration_commentaires'],
-		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires']
+		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
+		
+		/*ajout et suppression d'image_produits*/
+		['GET', 		'/admin/produits',	 			'produits#produits', 						'produits'],
+		['POST', 		'/admin/produitssubmit', 		'produits#insert_produits',					'produitssubmit'],
+		['POST', 		'/admin/produitsdelete', 		'produits#delete_produits',					'produitsdelete'],
+
+		/*ajout et suppression des images de la page de présentation du site*/
+		['GET', 		'/admin/images_sites',	 			'images_sites#images', 					'images'],
+		['POST', 		'/admin/images_sitessubmit', 		'images_sites#insert_images_sites',		'imagessubmit'],
+		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
+
 		
 
 	);
