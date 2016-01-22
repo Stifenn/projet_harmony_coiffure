@@ -32,7 +32,8 @@
 		/*Routes pour la page commentaires*/
 
 		['GET',			'/admin/commentaires', 			'Commentaires#Commentaires',				'administration_commentaires'],
-		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires']
+		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
+		['GET',			'/google',						'GoogleMaps#googlemaps',						'googlemap'],
 		
 
 	);
