@@ -10,10 +10,10 @@
 <div class="form_right" id="lookbook">	
 	<?php foreach ($lookbook as $currentLookbook) : ?> 
 		<div class="image_lookbook">
-			<a class="fancybox" data-title-id="title-1"  href="<?= $this->assetUrl($currentLookbook['chemin']) ?>">
-				<img src="<?= $this->assetUrl($currentLookbook['chemin']) ?>" class="img-thumbnail" alt="<?= $currentLookbook['label'] ?>">
+			<a class="fancybox" data-title-id="title-<?= $currentLookbook['numero'] ?>"  href="<?= $this->assetUrl($currentLookbook['chemin']) ?>">
+				<img src="<?= $this->assetUrl($currentLookbook['chemin']) ?>" class="img-thumbnail" alt="<?= $currentLookbook['label'] ?>" value="<?= $currentLookbook['numero'] ?>">
 			</a>
-			<div id="title-1" class="hidden">
+			<div id="title-<?= $currentLookbook['numero'] ?>" class="hidden">
 				<form enctype="multipart/form-data" action="<?= $this->url('lookbooksubmit')?>" method="POST" accept-charset="utf-8">
 					<input type="hidden" name="numero" value="<?= $currentLookbook['numero'] ?>">
 					<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
@@ -26,6 +26,7 @@
 	<?php endforeach ?>
 </div>	
 
-	<a href="<?= $this->url('home') ?>">Accueil</a>
+
 
 <?php $this->stop('main_content') ?>
+

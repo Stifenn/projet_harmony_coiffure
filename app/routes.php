@@ -4,7 +4,6 @@
 
 
 		['GET', 		'/', 							'Default#home', 							'home'],
-
 		/*Slider*/
 		['GET', 		'/admin/slider',	 			'images_sliders#slider', 					'slider'],
 		['POST', 		'/admin/slidersubmit', 			'images_sliders#insert_image_slider',		'slidersubmit'],

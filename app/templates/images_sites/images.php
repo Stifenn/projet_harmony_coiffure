@@ -32,6 +32,5 @@
 		<?php endforeach ?>
 	</div>
 </div>
-	<a href="<?= $this->url('home') ?>">Accueil</a>
 
 <?php $this->stop('main_content') ?>

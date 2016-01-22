@@ -6,7 +6,7 @@
 		
 	public function update_image_lookbook($chemin, $label , $numero){
 
-		$sql= "UPDATE images_lookbooks SET chemin = :chemin, label = :label WHERE numero = :numero";
+		$sql= 'UPDATE images_lookbooks SET chemin = :chemin, label = :label WHERE numero = :numero';
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':chemin', $chemin);
 		$sth->bindValue(':label' , $label);

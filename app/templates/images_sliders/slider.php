@@ -20,10 +20,8 @@
 	<div class="form_right">	
 		<?php foreach ($slider as $currentslider) : ?> 
 			<div class="image_slider_back">
-				<div class="<?= $currentsimages['numero'] ?>">
 					<img src="<?= $this->assetUrl($currentslider['chemin']) ?>" class="img-thumbnail" alt="<?= $currentslider['label'] ?>" width="200px" height="auto" ><br>
 					<input type="hidden" name="id" value="<?= $currentslider['id'] ?>">
-				</div>
 			</div>	
 		<?php endforeach ?>
 	</div>
@@ -31,6 +29,5 @@
 
 
 
-	<a href="<?= $this->url('home') ?>">Accueil</a>
 
 <?php $this->stop('main_content') ?>

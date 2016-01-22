@@ -23,7 +23,7 @@ header
 {
 	width: 60px;
 	height: 60px;
-	background-image: url("../../img/logo/logo.jpg");
+	background-image: url("../img/logo/logo.jpg");
 	background-size: 60px 60px;
 	float: left;
     margin-top: 10px;
@@ -86,13 +86,13 @@ section h2
 
 .form_left
 {
-	width: 30%;
+	width: 28%;
 	float: left;
 }
 
 .form_right
 {
-	width: 70%;
+	width: 68%;
 	float: left;
 }
 
@@ -191,7 +191,7 @@ body {
  padding: 20px;   
 }
 
-#title-1
+#title-1,#title-2,#title-3,#title-4,#title-5,#title-6,#title-7,#title-8,#title-9,#title-10,#title-11,#title-12
 {
 	margin-top: 50px;
 }
@@ -252,3 +252,7 @@ body > main > div > section > div > div.form_left > form > input.btn.btn-default
 	margin-top: 80px;
 }
 
+.form_left
+{
+	margin-left: 20px;
+}
