@@ -1,0 +1,258 @@
+main
+{
+	width: 980px;
+	margin: auto;
+}
+
+
+/*utility*/
+.clearfix
+{
+	clear: both;
+
+}
+
+/*style du header*/
+header
+{
+	height: 80px;
+	margin-top: 20px;
+}
+
+.logo
+{
+	width: 60px;
+	height: 60px;
+	background-image: url("../img/logo/logo.jpg");
+	background-size: 60px 60px;
+	float: left;
+    margin-top: 10px;
+}
+
+div.logo
+{
+	margin-left: 120px;
+	margin-top: 0px;
+}
+
+header nav ul
+{
+	margin-top: 0px;
+
+} 
+
+header nav ul li
+{
+	list-style-type: none;
+	float: left;
+/*	margin-left: 25px;*/
+	margin-top: 15px;
+}
+
+header nav ul li a
+{
+	text-decoration: none;
+	color: white;
+}
+
+/*bootstrap nav header*/
+.btn-group
+{
+	float: left;
+	margin-top: 15px;
+	margin-left: 150px;
+}
+/*style du container*/
+.container
+{
+	background-color: #979797
+}
+
+section
+{
+	height: 700px;
+	width: auto;
+	background-color: #CECECE
+}
+
+section h2
+{
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 25px;
+	font-size: 40px;
+	margin-left: 230px;
+}
+
+.form_left
+{
+	width: 28%;
+	float: left;
+}
+
+.form_right
+{
+	width: 68%;
+	float: left;
+}
+
+
+body > main > div > section > div.form_left > form > input.form-control
+{
+	width: 300px;
+}
+
+body > main > div > section > div.form_left > form > select
+{
+	margin-top: 30px;
+}
+
+body > main > div > section > div.form_left > form > input[type="submit"]:nth-child(7)
+{
+	margin-top: 30px;	
+}
+/*style de la page de presentation du salon*/
+
+.top
+{
+	margin-left: 150px;
+	margin-top: 20px;
+}
+
+.top img
+{
+	width: 400px;
+	height: auto;
+}
+
+.left, .middle, .right
+{
+	float: left;
+}
+
+.left img , .middle img, .right img
+{
+	width: 200px;
+	height: auto;
+	margin-top: 50px;
+	margin-right: 50px;
+}
+
+/*style de la page du lookbook*/
+
+body > main > div > section > h2
+{
+	margin-left: 0px;
+}
+
+#lookbook
+{
+	margin-top: 60px;
+	margin-left: 200px;
+}
+
+#lookbook img
+{
+	border-radius: 50%;
+	border:1px solid white;
+	width: 150px;
+	height: 150px;
+	margin-bottom: 20px;
+}
+
+.image_lookbook
+{
+	float: left;
+	margin-left: 25px;
+}
+
+body > main > div > section > div.form_left > form > input.form-control
+{
+	margin-top: 50px;
+}
+
+body > main > div > section > div.form_left > form > input[type="file"]:nth-child(4)
+{
+	margin-top: 30px;
+}
+body > main > div > section > div.form_left > form > input.btn.btn-default
+{
+	margin-top: 30px;
+}
+
+/*fancybox*/
+.hidden {
+ display: none;   
+}
+.fancybox-title a {
+ color: #fff;        
+}
+body {
+ padding: 20px;   
+}
+
+#title-1,#title-2,#title-3,#title-4,#title-5,#title-6,#title-7,#title-8,#title-9,#title-10,#title-11,#title-12
+{
+	margin-top: 50px;
+}
+
+/*style de la page du slider*/
+
+
+
+body > main > div > section > div > div.form_left > form > input[type="file"]:nth-child(2)
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > input.form-control
+{
+	width: 300px;
+}
+
+body > main > div > section > div > div.form_left > form > input.form-control
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > select
+{
+	margin-top: 25px;
+}
+
+body > main > div > section > div > div.form_left > form > input.btn.btn-default
+{
+	margin-top: 25px;
+}
+.image_slider_back
+{
+	float: left;
+	margin-left: 25px;
+	margin-top: 50px;
+}
+
+/*style de la page des produits*/
+
+
+#image_produit
+{
+	float: left;
+	margin-left: 80px;
+	margin-bottom: 25px;
+}
+
+#image_produit:first-child
+{
+	margin-top: 30px;
+}
+
+.image_produit_description
+{
+	text-align: center;
+	margin-top: 80px;
+}
+
+.form_left
+{
+	margin-left: 20px;
+}

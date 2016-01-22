@@ -14,7 +14,7 @@ class images_sitesController extends Controller
 
 		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */
 		$images_sitesManager = new \Manager\images_sitesManager();
-		$images = $images_sitesManager->findAll("chemin");
+		$images = $images_sitesManager->findAll("id") ;
 		$this->show('images_sites/images', ['images'=>$images]);
 	}
 
@@ -66,19 +66,12 @@ class images_sitesController extends Controller
 
 		}
 	}
+
 		$images_sitesManager = New \Manager\images_sitesManager();
-		$images = $images_sitesManager->insert(['chemin'=>$pathbd, 'label'=>$_REQUEST['label']]);
+		$images = $images_sitesManager->update_image_site( $pathbd, $_REQUEST['label'], $_REQUEST['select'] );
 /*		$this->show('images_sites/images', ['images'=>$images]);*/
 		$this->redirectToRoute('images');
 	}
 
-	public function delete_images_sites(){
-		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */
-		$images_sitesManager = New \Manager\images_sitesManager();
-		$id = $_REQUEST['id'];
-		$images = $images_sitesManager->delete($id);
-/*		$this->show('images_sites/images', ['images'=>$images]);*/
-		$this->redirectToRoute('images');
-	}
 }
 
