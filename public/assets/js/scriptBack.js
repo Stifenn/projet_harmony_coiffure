@@ -27,7 +27,7 @@ $(function(){
 	
 /*fancybox pour */
 
-$(document).ready(function() {
+
 	$(".fancybox")
 	    .attr('rel', 'gallery')
 	    .fancybox({
