@@ -8,18 +8,20 @@
 <div class="images_back">
 	<div class="form_left">	
 
-		<form enctype="multipart/form-data" action="<?= $this->url('imagessubmit')?>" method="POST" accept-charset="utf-8">
+		<form enctype="multipart/form-data" id="form" action="<?= $this->url('imagessubmit')?>" method="POST" accept-charset="utf-8">
 			
 			<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-			<input type="text" class="form-control" name="label" value="" placeholder="nom de l'image"><br>
-			<input type="file" name="my-file" value="" placeholder="">
+			<label for="label">Nom de l'image :</label>
+			<input type="text" class="form-control" id="label" name="label" placeholder="nom de l'image"><br>
+
+			<input type="file" name="my-file" placeholder="">
 			<select name="select" class="btn btn-default">
 				<option value="top" selected >devanture</option>
 				<option value="left">image de gauche</option>
 				<option value="middle">image centrale</option>
 				<option value="right">image de droite</option>
 			</select><br>
-			<input type="submit" class="btn btn-default dropdown-toggle" name="send" value="Modifier">
+			<input type="submit" id="send" class="btn btn-default dropdown-toggle" name="send" value="Modifier">
 		</form>	
 	</div>
 

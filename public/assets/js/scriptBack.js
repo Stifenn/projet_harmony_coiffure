@@ -44,4 +44,35 @@ $(function(){
 		    }
 	    });
 
+var $form = $('#form');
+	
+	$('#send').on('click', function() {
+		$form.trigger('submit');
+		return false;
+	});
+	
+	$form.on('submit', function() {
+		
+		var label = $('#label').val();
+		
+		if(label == '') {
+			alert('Les champs doivent êtres remplis');
+		} else {
+			$.ajax({
+				url: $(this).attr('action'),
+				type: $(this).attr('method'),
+				data: $(this).serialize(),
+				dataType: 'json',
+				success: function(json) {
+					if(json.reponse == 'ok') {
+						alert('Tout est bon');
+					} else {
+						alert('Erreur : '+ json.reponse);
+					}
+				}
+			});
+		}
+		return false;
+	});
+
 });
