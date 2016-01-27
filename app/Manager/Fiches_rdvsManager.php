@@ -37,7 +37,6 @@ class Fiches_rdvsManager extends  Manager
 
 	public function rdvExists($date,$idUsers)
 	{
-		//$sql='SELECT count(date) FROM Fiches_rdvs WHERE date = :date';
 		$sql = "SELECT count(date),count(id_users) FROM fiches_rdvs WHERE fiches_rdvs.date = :date AND id_users = :idusers";
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':date',$date,\PDO::PARAM_STR);
