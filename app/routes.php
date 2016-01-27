@@ -36,10 +36,8 @@
 
 		/*Routes pour la partie fiche client*/
 		['GET|POST', 	'/admin/recherche',				'User#recherche',							'recherche'],
-		['GET', 		'/admin/fiche/[:id]',			'User#fichesclient',						'fiche_client'],
-		['GET|POST',		'/admin/fiche/ajout',			'Fiches_rdvs#ajoutFiche',					'ajout_fiche'],
-		['GET|POST',	'/admin/prestation/ajout/[:id]','Prestations#prestation',					'prestation'],
-	
-		/*facebook*/
-		['GET',			'/facebook',					'Facebook#facebook',						'facebook'],
+		['GET', 		'/admin/fiche/[:id]',			'Fiches_rdvs#fichesclient',					'fiche_client'],
+		['GET|POST',	'/admin/fiche/ajout',			'Fiches_rdvs#ajoutFiche',					'ajout_fiche'],
+		['GET|POST',	'/admin/fiche/modif/[:id]',		'Prestations#modifFiche',					'modif_fiche'],
+		['GET|POST',	'/admin/prestation/ajout',     	'Prestations#prestation',					'prestation'],
 	);

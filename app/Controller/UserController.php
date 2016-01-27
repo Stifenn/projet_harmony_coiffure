@@ -32,7 +32,7 @@ class UserController extends Controller
 	$this->show('user/create_user');
 	}
 
-	function Recherche()
+	public function Recherche()
 	{
 		
 		$usersManager = new \Manager\UserManager();
@@ -43,12 +43,5 @@ class UserController extends Controller
 			$this->show('user/recherche',['recherche' => $recherche]);
 		}
 		$this->show('user/recherche');
-	}
-
-	public function fichesclient($id)
-	{
-		$usersManager = new \Manager\UserManager();
-		$fiche = $usersManager->getFicheClient($id);
-		$this->show('fiche/fiche_rdv', ['fiche' => $fiche, 'clientId' => $id]);
 	}
 }
