@@ -20,7 +20,7 @@ section h2
 /*style de la page de presentation du salon*/
 .top
 {
-	width: 600px;
+	width: 550px;
 	height: auto;
 	margin-top: 25px;
 }
@@ -32,7 +32,7 @@ section h2
 
 .left img , .middle img, .right img
 {
-	width: 200px;
+	width: 250px;
 	height: auto;
 
 
