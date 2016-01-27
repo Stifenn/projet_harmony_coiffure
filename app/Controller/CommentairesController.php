@@ -8,6 +8,7 @@ class CommentairesController extends Controller
 {
 	function Commentaires()
 	{
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$commentairesManager = new \Manager\CommentairesManager();
 		$Commentaires = $commentairesManager->findAll();
 		$this->show('commentaires/commentaires', ['Commentaires' => $Commentaires]);
@@ -15,6 +16,7 @@ class CommentairesController extends Controller
 
 	function ModifierCommentaires($id)
 	{
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$commentairesManager = new \manager\CommentairesManager();
 		
 		if(isset($_REQUEST['statut']) == 'on')

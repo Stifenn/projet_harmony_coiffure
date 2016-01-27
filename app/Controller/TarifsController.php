@@ -8,6 +8,7 @@ class TarifsController extends Controller
 {
 	function Tarifs()
 	{
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$tarifsManager = new \Manager\TarifsManager();
 		$Tarifs = $tarifsManager->findAll();
 		$this->show('tarifs/tarifs',['Tarifs' => $Tarifs]);
@@ -15,7 +16,7 @@ class TarifsController extends Controller
 
 	function ModifierTarifs($id)
 	{
-		
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$TarifsManager = new \Manager\TarifsManager();
 
 		if(isset($_REQUEST['modifier']))
@@ -33,7 +34,8 @@ class TarifsController extends Controller
 	}
 
 	function AjouterTarifs()
-	{	
+	{
+		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$TarifsManager = new \Manager\TarifsManager();
 		if(!empty($_REQUEST['name']) && !empty($_REQUEST['prix_femmes']) && !empty($_REQUEST['prix_hommes']))
 		{
