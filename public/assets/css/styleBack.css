@@ -20,7 +20,7 @@ section h2
 /*style de la page de presentation du salon*/
 .top
 {
-	width: 550px;
+	width: 500px;
 	height: auto;
 	margin-top: 25px;
 }
@@ -34,8 +34,6 @@ section h2
 {
 	width: 250px;
 	height: auto;
-
-
 }
 
 /*style de la page du lookbook*/
@@ -78,7 +76,6 @@ section h2
 
 /*style de la page des produits*/
 
-
 #image_produit
 {
 	float: left;
@@ -96,14 +93,6 @@ section h2
 	text-align: center;
 	margin-top: 80px;
 }
-
-.form_left
-{
-	margin-left: 20px;
-}
-
-
-
 /*Image de la page d'accueil de l'admin*/
 .logo_accueil
 {

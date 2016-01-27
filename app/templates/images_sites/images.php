@@ -17,7 +17,7 @@
 
 
 
-<!-- formulaire pour l'image  -->
+
 <div class="row">
 		<div class="col-md-4 col-md-offset-4">
 		<div class="images_back">
@@ -26,7 +26,6 @@
 				<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 				<label for="label">Nom de l'image :</label>
 				<input type="text" class="form-control" id="label" name="label" placeholder="nom de l'image"><br>
-
 				<input type="file" name="my-file" placeholder="">
 				<select name="select" class="btn btn-default">
 					<option value="top" selected >devanture</option>
