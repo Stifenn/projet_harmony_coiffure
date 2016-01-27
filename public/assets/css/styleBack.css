@@ -1,19 +1,29 @@
+/*style de la page du slider*/
 
 
-.form_left
+section h2
 {
-	width: 28%;
-	float: left;
+	text-align: center;
 }
 
-.form_right
+.image_slider_back
 {
-	width: 68%;
 	float: left;
+	margin-top: 50px;
+}
+
+.form_slider
+{
+	text-align: center;
 }
 
 /*style de la page de presentation du salon*/
-
+.top
+{
+	width: 600px;
+	height: auto;
+	margin-top: 25px;
+}
 
 .left, .middle, .right
 {
@@ -24,8 +34,8 @@
 {
 	width: 200px;
 	height: auto;
-	margin-top: 50px;
-	margin-right: 50px;
+
+
 }
 
 /*style de la page du lookbook*/
@@ -48,7 +58,7 @@
 .image_lookbook
 {
 	float: left;
-	margin-left: 25px;
+	margin-left: 20px;
 }
 
 /*fancybox*/
@@ -65,15 +75,6 @@
 	margin-top: 50px;
 }
 
-/*style de la page du slider*/
-
-
-.image_slider_back
-{
-	float: left;
-	margin-left: 25px;
-	margin-top: 50px;
-}
 
 /*style de la page des produits*/
 

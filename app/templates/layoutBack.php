@@ -58,18 +58,14 @@
     <script src="<?= $this->assetUrl('js/js_theme/plugins/iCheck/icheck.min.js') ?>" type="text/javascript"></script>
     <!-- calendar -->
     <script src="<?= $this->assetUrl('js/js_theme/plugins/fullcalendar/fullcalendar.js') ?>" type="text/javascript"></script>
-
     <!-- Director App -->
     <script src="<?= $this->assetUrl('js/js_theme/Director/app.js') ?>" type="text/javascript"></script>
-
     <!-- Director dashboard demo (This is only for demo purposes) -->
     <script src="<?= $this->assetUrl('js/js_theme/Director/dashboard.js') ?>" type="text/javascript"></script>
-    
     <!-- fancybox -->
-    
+
     <script type="text/javascript" src="<?= $this->assetUrl('lib/jquery.mousewheel-3.0.6.pack.js') ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('source/jquery.fancybox.pack.js?v=2.1.5')?>"></script>
-
 	<!-- JS scriptBack -->
     <script src="<?= $this->assetUrl('js/scriptBack.js') ?>" type="text/javascript" charset="utf-8" ></script>
 
@@ -153,7 +149,7 @@
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="#">
-                                <i class="fa fa-dashboard"></i> <span>Images</span>
+                                <i class="fa fa-picture-o"></i> <span>Images</span>
                             </a>
                             <ul id="nav">
 								<li><a href="<?= $this->url('slider') ?>" title="">Image du Slider</a></li>
@@ -165,17 +161,17 @@
                         </li>
                         <li>
                             <a href="<?= $this->url('administration_tarifs') ?>">
-                                <i class="fa fa-gavel"></i> <span>Tarifs</span>
+                                <i class="fa fa-eur"></i> <span>Tarifs</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?= $this->url('administration_commentaires') ?>">
-                                <i class="fa fa-globe"></i> <span>Commentaires</span>
+                                <i class="fa fa-comment"></i> <span>Commentaires</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?= $this->url('manage') ?>">
-                                <i class="fa fa-glass"></i> <span>Gestion des comptes</span>
+                                <i class="fa fa-users"></i> <span>Gestion des comptes</span>
                             </a>
                         </li>
                     </ul>
