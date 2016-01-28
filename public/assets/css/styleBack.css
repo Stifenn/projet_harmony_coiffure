@@ -1,5 +1,8 @@
 /*style de la page du slider*/
-
+.content
+ {
+ 	height: 850px;
+ }
 
 section h2
 {
@@ -15,7 +18,9 @@ section h2
 .form_slider
 {
 	text-align: center;
+	margin-top: 50px;
 }
+
 
 /*style de la page de presentation du salon*/
 .top
@@ -23,6 +28,7 @@ section h2
 	width: 500px;
 	height: auto;
 	margin-top: 25px;
+	margin-left: 100px;
 }
 
 .left, .middle, .right
@@ -59,6 +65,10 @@ section h2
 	margin-left: 20px;
 }
 
+.erreur_lookbook h2
+{
+	text-transform: uppercase;
+}
 /*fancybox*/
 .hidden {
  display: none;   
@@ -101,7 +111,6 @@ section h2
 	background-image: url("../img/img_accueil_gestion/devanture.jpg");
 	background-size: 500px 450px;
 	background-repeat: no-repeat;
-	margin-left: 310px;
 	margin-top: 50px;
 }
 

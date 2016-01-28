@@ -90,23 +90,19 @@
 		        <li class="dropdown user user-menu">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		                <i class="fa fa-user"></i>
-		                <span>Jane Doe <i class="caret"></i></span>
+		                <span><?= $_SESSION['user']['prenom'] ?> <?= $_SESSION['user']['nom'] ?><i class="caret"></i></span>
 		            </a>
 		            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
 		                <li class="divider"></li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="<?= $this->url('profil') ?>">
 	                        	<i class="fa fa-user fa-fw pull-right"></i>
 	                            Profile
-	                        </a>
-	                        <a data-toggle="modal" href="#modal-user-settings">
-	                        	<i class="fa fa-cog fa-fw pull-right"></i>
-	                            Settings
 	                        </a>
 	                    </li>
 						 <li class="divider"></li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="<?= $this->url('logoff') ?>">
 	                        	<i class="fa fa-ban fa-fw pull-right"></i> 
 	                        	Logout
 	                        </a>
@@ -128,7 +124,7 @@
                             <img src="../assets/img/img_theme/26115.jpg" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, <?= $_SESSION['user']['prenom'] ?></p>
                             <a href="#">
                            		<i class="fa fa-circle text-success"></i> 
                             	Online
@@ -256,10 +252,6 @@
                         }
                     ]
                 };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
 
             });
             // Chart.defaults.global.responsive = true;

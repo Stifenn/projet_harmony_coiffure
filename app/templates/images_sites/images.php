@@ -2,10 +2,8 @@
 
 <?php $this->start('main_content') ?>
 
-	
-
 <div class="row">
-	<div class="col-md-offset-4">
+	<div class="col-md-6 col-md-offset-3">
 		<?php foreach ($images as $currentsimages) : ?> 
 			<div class="<?= $currentsimages['position'] ?>">	
 				<img src="<?= $this->assetUrl($currentsimages['chemin']) ?>" class="img-thumbnail" alt="<?= $currentsimages['label'] ?>">
@@ -15,7 +13,12 @@
 	</div>
 </div>
 
-
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<?php if(isset($errorFile) && $errorFile === true) echo '<h2>Erreur : pas de fichier</h2>' ?>
+		<?php if(isset($errorLabel) && $errorLabel === true) echo '<h2>Veuillez remplir le nom!</h2>' ?>
+	</div>
+</div>
 
 
 <div class="row">

@@ -5,7 +5,7 @@
 	<div class="col-md-6 col-md-offset-3">
 	<?php foreach ($produits as $currentsproduits) : ?> 
 			<div id="image_produit" class="<?= $currentsimages['numero'] ?>">
-				<img src="<?= $this->assetUrl($currentsproduits['chemin']) ?>" class="img-thumbnail" alt="<?= $currentsproduits['label'] ?>" width="250" height="auto" ><br>
+				<img src="<?= $this->assetUrl($currentsproduits['chemin']) ?>" class="img-thumbnail" alt="<?= $currentsproduits['label'] ?>" width="300" height="auto" ><br>
 				<input type="hidden" name="id" value="<?= $currentsproduits['id'] ?>">
 			</div>
 			<div class="image_produit_description">
@@ -14,6 +14,11 @@
 				<div class="clearfix"></div>
 			</div>
 	<?php endforeach ?>
+
+	<div class="row">
+		<?php if(isset($errorFile) && $errorFile === true) echo '<p>Erreur : pas de fichier!</p>' ?>
+		<?php if(isset($error) && $error === true) echo '<p>Veuillez remplir tous les champs!</p>' ?>
+	</div>
 <!-- 	</div>
 </div>
 

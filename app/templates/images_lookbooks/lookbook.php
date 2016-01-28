@@ -5,7 +5,7 @@
 	
 
 <div class="row">
-	<div class="col-md-7 col-md-offset-2">
+	<div class="col-md-7 col-md-offset-2 col-sm-6 col-xs-4 ">
 		<div id="lookbook">	
 			<?php foreach ($lookbook as $currentLookbook) : ?> 
 				<div class="image_lookbook">
@@ -24,6 +24,14 @@
 				</div>
 			<?php endforeach ?>
 		</div>	
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5 col-md-offset-2">
+		<div class="erreur_lookbook">
+			<?php if(isset($errorFile) && $errorFile === true) echo '<h2>Erreur : pas de fichier</h2>' ?>
+			<?php if(isset($errorLabel) && $errorLabel === true) echo '<h2>Erreur : pas de nom</h2>' ?>
+		</div>
 	</div>
 </div>
 
