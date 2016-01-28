@@ -1,13 +1,13 @@
 <?php $this->layout('layoutBack', ['title' => 'Gestion des commentaires']) ?>
 
 <?php $this->start('main_content') ?>
-<div class="row">
+<div class="row" >
   	<div class="col-md-6 col-md-offset-3">
 		<?php foreach($Commentaires as $CurrentCommentaires) : ?>
 			<article>
-				<p><?= $CurrentCommentaires['pseudo'] ?></p>
-				<p><?= $CurrentCommentaires['email'] ?></p>
-				<p><?= $CurrentCommentaires['commentaire'] ?></p>
+				<p>Pseudo : <?= $CurrentCommentaires['pseudo'] ?></p>
+				<p>Email : <?= $CurrentCommentaires['email'] ?></p>
+				<p>Message : <?= $CurrentCommentaires['commentaire'] ?></p>
 			</article>
 			<aside>
 				<form action="<?= $this->url('modifier_commentaires',['id'=>$CurrentCommentaires['id']])?>" method="POST" accept-charset="utf-8">

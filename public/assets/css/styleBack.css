@@ -167,3 +167,9 @@ section h2
 	/* à adapter, le minimum est le meilleur mais voyez large 😉 */
 	max-height: 13em;
 }
+
+/*style du livre d'or*/
+hr
+{
+	border-color: black;
+}
