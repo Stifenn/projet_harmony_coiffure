@@ -20,7 +20,10 @@ class images_lookbooksController extends Controller
 
 	// function qui récupère les images pour le slider en DBB
 	public function insert_image_lookbook(){
-	$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
+	$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */	
+
+	$errorFile = $errorLabel = false;
+		
 		// J'ai recu des données de formulaire
 		if ( isset($_POST['send'])) {
 
@@ -29,7 +32,7 @@ class images_lookbooksController extends Controller
 
 				// Vérifier si le téléchargement du fichier n'a pas été interrompu
 				if ($_FILES['my-file']['error'] != UPLOAD_ERR_OK) {
-					echo 'Erreur lors du téléchargement.';
+					$errorFile = true;
 				} else {
 					// Objet FileInfo
 					$finfo = new \finfo(FILEINFO_MIME_TYPE);
@@ -60,13 +63,17 @@ class images_lookbooksController extends Controller
 					}
 				}
 			} else {
-			echo 'Veuillez renseigner le nom de l\'image !';
+				$errorLabel = true;
 			}
 		}
+		if($errorFile || $errorLabel) {
+		$images_lookbooksManager = new \Manager\images_lookbooksManager();
+		$lookbook = $images_lookbooksManager->findAll('numero');
+		$this->show('images_lookbooks/lookbook', ['lookbook'=>$lookbook, 'errorFile' => $errorFile, 'errorLabel' => $errorLabel]);
+		}
+
 			$images_lookbooksManager = New \Manager\images_lookbooksManager();
-
 			$lookbook = $images_lookbooksManager->update_image_lookbook($pathbd ,$_REQUEST['label'], $_REQUEST['numero']);
-
 /*			$this->show('images_lookbooks/lookbook', ['lookbook'=>$lookbook]);*/
 			$this->redirectToRoute('lookbook');
 	}

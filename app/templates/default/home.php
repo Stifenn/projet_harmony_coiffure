@@ -31,4 +31,8 @@
 	<?php endif; ?>
 	</div>
 
+
 <?php $this->stop('div_fixe') ?>
+
+<?php $this->stop('main_content') ?>
+

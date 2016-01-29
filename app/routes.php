@@ -51,6 +51,14 @@
 		['GET',			'/admin/commentaires', 			'Commentaires#Commentaires',				'administration_commentaires'],
 		['POST', 		'/admin/statut/[:id]', 			'Commentaires#modifierCommentaires', 		'modifier_commentaires'],
 
+
+		/*Routes pour la partie fiche client*/
+		['GET|POST', 	'/admin/recherche',				'User#recherche',							'recherche'],
+		['GET', 		'/admin/fiche/[:id]',			'Fiches_rdvs#fichesclient',					'fiche_client'],
+		['GET|POST',	'/admin/fiche/ajout',			'Fiches_rdvs#ajoutFiche',					'ajout_fiche'],
+		['GET|POST',	'/admin/fiche/modif/[:id]',		'Prestations#modifFiche',					'modif_fiche'],
+		['GET|POST',	'/admin/prestation/ajout',     	'Prestations#prestation',					'prestation'],
+
 		['GET',			'/google',						'GoogleMaps#googlemaps',						'googlemap'],
 		
 		/*ajout et suppression d'image_produits*/
@@ -64,6 +72,5 @@
 		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
 
 
-		
-
+	
 	);

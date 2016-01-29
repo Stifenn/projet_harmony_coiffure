@@ -36,6 +36,20 @@ class UserController extends Controller
 	$this->show('user/create_user');
 	}
 
+
+	public function Recherche()
+	{
+		
+		$usersManager = new \Manager\UserManager();
+
+		if(isset($_REQUEST['name']))
+		{
+			$recherche = $usersManager->findUsers($_REQUEST['name']);
+			$this->show('user/recherche',['recherche' => $recherche]);
+		}
+		$this->show('user/recherche');
+	}
+
 	/**
 	 * Page de gestion des utilisateurs
 	 */

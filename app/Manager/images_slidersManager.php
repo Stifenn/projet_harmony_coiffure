@@ -2,7 +2,8 @@
 
 	namespace Manager;
 
-	class images_slidersManager extends \W\Manager\Manager{
+	class images_slidersManager extends \W\Manager\Manager
+	{
 		
 		public function update_image_slider($chemin, $label, $numero){
 

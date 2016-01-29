@@ -1,4 +1,5 @@
 $(function(){
+
 	console.log('DOMContentLoaded : OK');
 
 	// fonction sur le changement du select id #select-role dans manage.php
@@ -26,6 +27,7 @@ $(function(){
 	});
 	
 /*fancybox pour */
+
 	$(".fancybox")
 	    .attr('rel', 'gallery')
 	    .fancybox({
@@ -40,5 +42,7 @@ $(function(){
 		            }
 		        }
 		    }
+
 		});
 });
+
