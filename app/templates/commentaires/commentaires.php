@@ -12,8 +12,8 @@
 			<aside>
 				<form action="<?= $this->url('modifier_commentaires',['id'=>$CurrentCommentaires['id']])?>" method="POST" accept-charset="utf-8">
 					<input type="checkbox" name="statut" <?php if($CurrentCommentaires['moderation'] == 1){echo 'checked';} ?>>
-					<input type="submit" name="modifier" value="Afficher">
-					<input type="submit" name="supprimer" value="Supprimer">
+					<input type="submit" name="modifier" class="btn btn-primary" value="Afficher">
+					<input type="submit" name="supprimer" class="btn btn-danger" value="Supprimer">
 				</form>
 			</aside>
 			<hr />

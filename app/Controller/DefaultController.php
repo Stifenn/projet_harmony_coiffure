@@ -12,7 +12,11 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
-		$this->show('default/home');
+		$show_images_lookbook = new \Manager\images_lookbooksManager();
+		$show_lookbook = $show_images_lookbook->show_image_lookbook();
+
+		$this->show('default/home', ['show_lookbook'=> $show_lookbook]);
+
 	}
 
 	/**

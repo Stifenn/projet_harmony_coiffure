@@ -20,8 +20,7 @@
     <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/styleBack.css') ?>">
     <!-- fancybox -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
-
-<!-- Javascript -->
+    <!-- Javascript -->
 	<!-- jQuery 2.0.2 -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- jQuery UI 1.10.3 -->
@@ -96,7 +95,7 @@
                         </div>
                     </div>
                     <!-- search form -->
-                    <form action="#" method="get" class="sidebar-form">
+                    <form action="<?= $this->url('recherche') ?>" method="post" class="sidebar-form">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">

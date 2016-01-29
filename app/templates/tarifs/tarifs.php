@@ -18,8 +18,8 @@
 					      	<td><input type="text" name="name" value="<?= $CurrentTarifs['name'] ?>"/></td>
 					      	<td><input type="text" name="prix_femmes" value="<?= $CurrentTarifs['prix_femmes'] ?>"/></td>
 					      	<td><input type="text" name="prix_hommes" value="<?= $CurrentTarifs['prix_hommes'] ?>"/></td>
-					      	<td><input type="submit" name="modifier" value="Modifier" /></td>
-					      	<td><input type="submit" name="supprimer" value="Supprimer" /></td>
+					      	<td><input type="submit" name="modifier" class="btn btn-primary" value="Modifier" /></td>
+					      	<td><input type="submit" name="supprimer" class="btn btn-danger" value="Supprimer" /></td>
 				      	</form>
 					</tr>
 			     	<?php endforeach ?>
@@ -28,7 +28,7 @@
 					     	<td><input type="text" name="name" placeholder="Description" /></td>
 						    <td><input type="text" name="prix_femmes" placeholder="prix pour les hommes" /></td>
 					      	<td><input type="text" name="prix_hommes" placeholder="prix pour les femmes" /></td>
-							<td><input type="submit" name="ajouter" value="Ajouter" /></td>
+							<td><input type="submit" name="ajouter" class="btn btn-default" value="Ajouter" /></td>
 						</form>
 			    	</tr>
 		  		</tbody>
