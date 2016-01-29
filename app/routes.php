@@ -3,7 +3,7 @@
 	$w_routes = array(
 
 
-		['GET', 		'/', 							'Default#home', 							'home'],
+		['GET|POST', 	'/', 							'Default#home', 							'home'],
 		/*Slider*/
 		['GET', 		'/admin/slider',	 			'images_sliders#slider', 					'slider'],
 		['POST', 		'/admin/slidersubmit', 			'images_sliders#insert_image_slider',		'slidersubmit'],
@@ -65,6 +65,4 @@
 		['POST', 		'/admin/images_sitessubmit', 		'images_sites#insert_images_sites',		'imagessubmit'],
 		['POST', 		'/admin/images_sitesdelete', 		'images_sites#delete_images_sites',		'imagesdelete'],
 
-
-	
 	);

@@ -13,7 +13,7 @@ class PrestationsController extends Controller
 			$modif = $prestationsManager->insert(['name'=>$_POST['nom'],'description'=>$_POST['description'],'id_fiches_rdv'=>$_POST['idFiche']]);
 			$this->redirectToRoute('modif_fiche',['id' => $_POST['idFiche']]);
 		}
-}
+	}
 
 
 	public function modifFiche($id)

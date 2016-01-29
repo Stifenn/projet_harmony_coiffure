@@ -6,7 +6,7 @@ use \W\Controller\Controller;
 
 class CommentairesController extends Controller
 {
-	function Commentaires()
+	public function Commentaires()
 	{
 		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$commentairesManager = new \Manager\CommentairesManager();
@@ -14,7 +14,7 @@ class CommentairesController extends Controller
 		$this->show('commentaires/commentaires', ['Commentaires' => $Commentaires]);
 	}
 
-	function ModifierCommentaires($id)
+	public function ModifierCommentaires($id)
 	{
 		$this->allowTo(['admin', 'staff']); /*-> limite l'accès à l'admin ou au staff */		
 		$commentairesManager = new \manager\CommentairesManager();

@@ -12,7 +12,17 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
-		$this->show('default/home');
+		$insertCommentaire ='';
+		$commentairesManager = new \manager\CommentairesManager();
+		$TarifsManager = new \manager\TarifsManager();
+		$produitManager = new \manager\ProduitsManager();
+		if(isset($_REQUEST) && !empty($_REQUEST)){
+			$insertCommentaire= $commentairesManager ->insertCommentaireHome($_REQUEST['name'],$_REQUEST['email'],$_REQUEST['message']);
+		}
+		$showCommentaire =$commentairesManager->showCommentairesHome();
+		$tarif = $TarifsManager->showTarif();
+		$produit = $produitManager->showProduit();
+		$this->show('default/home',['insertCommentaire'=>$insertCommentaire,'showCommentaire'=>$showCommentaire,'tarif'=>$tarif,'produit'=>$produit]);
 	}
 
 	/**
@@ -69,5 +79,7 @@ class DefaultController extends Controller
 	{
 		$this->show('default/admin');
 	}
+
+
 
 }
