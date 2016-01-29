@@ -10,7 +10,7 @@
 		</div>
 	<?php endif; ?>
 	<?php 
-	// si l'utilisateur s'est trompé dans son mdp
+	// si l'utilisateur s'est trompé dans son mot de passe
 	if(isset($errorPass)) : ?>
 		<div>
 			Mot de passe incorrect !

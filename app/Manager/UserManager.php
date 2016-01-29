@@ -2,7 +2,7 @@
 
 namespace Manager;
 
-class UserManager extends \W\Manager\Manager 
+class UserManager extends \W\Manager\Manager
 {
 	// fonction qui vérifie si un id existe en DB
 	public function idExists($userId)
@@ -22,4 +22,5 @@ class UserManager extends \W\Manager\Manager
 	   }
 	   return false;
 	}
+
 }

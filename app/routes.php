@@ -17,9 +17,13 @@
 		/* user connexion et mot de passe perdu */
 		['GET|POST', 	'/login', 						'Default#login', 							'login'],
 		['GET', 		'/logoff', 						'Default#logoff', 							'logoff'],
-		['GET', 		'/login/lostpassword', 			'Default#lostPassword', 					'lost_password'],
+		['POST', 		'/login/lostpassword', 			'Default#lostPassword', 					'lost_password'],
+		['GET|POST',	'/login/lostpassword/[:token]', 'User#changePassword', 						'change_password'],
 		
-		/* acces a l'adminisatration */
+		/* formulaire de contact */
+		['GET|POST',	'/contact', 					'Default#contact', 							'contact'],
+
+		/* acces a l'administration */
 		['GET', 		'/admin', 						'Default#admin', 							'admin'],
 		
 		/* user création de compte ou récupération */

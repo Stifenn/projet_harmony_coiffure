@@ -5,12 +5,12 @@ $(function(){
 	$('#select-role').change(function() {
 		// si la valeur de l'option est staff
 		if ( $(this).val() == 'staff' ) {
-			$('#email').show();
+			$('#staff').show();
 			$('#password').show();
 			$('#password-confirm').show();
 		// si la valeur de l'option est client
 		} else if ( $(this).val() == 'client' ) {
-			$('#email').hide();
+			$('#staff').hide();
 			$('#password').hide();
 			$('#password-confirm').hide();
 		}
@@ -26,8 +26,6 @@ $(function(){
 	});
 	
 /*fancybox pour */
-
-$(document).ready(function() {
 	$(".fancybox")
 	    .attr('rel', 'gallery')
 	    .fancybox({
@@ -42,6 +40,5 @@ $(document).ready(function() {
 		            }
 		        }
 		    }
-	    });
-
+		});
 });

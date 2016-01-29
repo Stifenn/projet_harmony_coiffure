@@ -33,13 +33,24 @@
 	</tr>
 <?php endforeach ?>
 </table>
-
+<p class="bg-primary">Créer un compte</p>
 <form action="<?= $this->url('user_create') ?>" method="POST">
-	<input type="text" name="nom" placeholder="Nom" required />
-	<input type="text" name="prenom" placeholder="Prénom" required />
-	<input type="email" name="email" placeholder="Email" id="email" hidden />
-	<input type="password" name="password" placeholder="Mot de passe" id="password" hidden />
-	<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" id="password-confirm" hidden />
+	<label for="nom">Nom</label>
+	<input id="nom" type="text" name="nom" placeholder="Nom" required />
+
+	<label for="prenom">Prénom</label>
+	<input id="prenom" type="text" name="prenom" placeholder="Prénom" required />
+
+	<span id="staff" hidden>
+		<label for="email">Email</label>
+		<input type="email" name="email" placeholder="Email" id="email" />
+
+		<label for="password">Mot de passe</label>
+		<input type="password" name="password" placeholder="Mot de passe" id="password" />
+
+		<label for="password-confirm">Confirmer le mot de passe</label>
+		<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" id="password-confirm" />
+	</span>
 	<select name="role" id="select-role">
 		<option value="client">Client</option>
 		<?php
