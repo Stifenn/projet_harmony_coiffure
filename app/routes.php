@@ -59,7 +59,7 @@
 		['GET|POST',	'/admin/fiche/modif/[:id]',		'Prestations#modifFiche',					'modif_fiche'],
 		['GET|POST',	'/admin/prestation/ajout',     	'Prestations#prestation',					'prestation'],
 
-		['GET',			'/google',						'GoogleMaps#googlemaps',						'googlemap'],
+		['GET',			'/google',						'GoogleMaps#googlemaps',					'googlemap'],
 		
 		/*ajout et suppression d'image_produits*/
 		['GET', 		'/admin/produits',	 			'produits#produits', 						'produits'],
