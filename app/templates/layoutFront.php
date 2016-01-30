@@ -7,9 +7,11 @@
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/normal.css')?>">
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/style.css')?>">
   <link rel="stylesheet" href="<?= $this->assetUrl('css/css_theme_front/animation.css')?>">
+  
   <!-- fancybox -->
   <link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
       <!-- jQuery UI 1.10.3 -->

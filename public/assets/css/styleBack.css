@@ -173,3 +173,14 @@ hr
 {
 	border-color: black;
 }
+
+@media screen and (max-width: 34em) {
+  #lookbook {
+
+  }
+  #lookbook img {
+  	float: none;
+  	margin-left: -100px;
+  	width: 100%;
+  }
+}

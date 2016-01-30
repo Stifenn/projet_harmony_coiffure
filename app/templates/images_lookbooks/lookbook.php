@@ -5,7 +5,7 @@
 	
 
 <div class="row">
-	<div class="col-md-7 col-md-offset-2 col-sm-6 col-xs-4 ">
+	<div class="col-xl-7 col-xl-offset-2 col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-2 col-xs-12 col-xs-offset-0 ">
 		<div id="lookbook">	
 			<?php foreach ($lookbook as $currentLookbook) : ?> 
 				<div class="image_lookbook">

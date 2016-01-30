@@ -1868,7 +1868,23 @@ html { overflow-y: scroll; }
 #lookbook img
 {
   border-radius: 50%;
-  border:1px solid white;
+  border:4px solid white;
+
+  /*border radius noir*/
+
+  /*  -moz-box-shadow: 10px 15px 50px 0px #000000;
+  -webkit-box-shadow: 10px 15px 50px 0px #000000;
+  -o-box-shadow: 10px 15px 50px 0px #000000;
+  box-shadow: 10px 15px 50px 0px #000000;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=146, Strength=50);*/
+
+  /*border radius blanc*/
+  -moz-box-shadow: 10px 15px 50px 0px #ffffff;
+  -webkit-box-shadow: 10px 15px 50px 0px #ffffff;
+  -o-box-shadow: 10px 15px 50px 0px #ffffff;
+  box-shadow: 10px 15px 50px 0px #ffffff;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#ffffff, Direction=146, Strength=50);
+  
   width: 150px;
   height: 150px;
   margin-bottom: 20px;
@@ -1879,3 +1895,29 @@ html { overflow-y: scroll; }
   float: left;
   margin-left: 20px;
 }
+
+
+/*image lookbook sans deformation*/
+
+/*#lookbook
+{
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+#lookbook img
+{
+  border-radius: 50%;
+  border:1px solid white;
+  max-height: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.image_lookbook
+{
+  float: left;
+  margin-left: 20px;
+  width: 150px;
+  height: 150px;
+}*/
