@@ -33,13 +33,11 @@
 <?php $this->start('show_image_lookbook') ?>
 
 	<?php foreach ($show_lookbook as $currentLookbook) : ?>
-				<li>
 					<div class="image_lookbook">
 						<a class="fancybox" rel="gallery" data-title-id="title-<?= $currentLookbook['numero'] ?>"  href="<?= $this->assetUrl($currentLookbook['chemin']) ?>">
 							<img src="<?= $this->assetUrl($currentLookbook['chemin']) ?>" class="img-thumbnail" alt="<?= $currentLookbook['label'] ?>" value="<?= $currentLookbook['numero'] ?>">
 						</a>
 					</div>
-				</li> 	
 	<?php endforeach ?>
 
 <?php $this->stop('show_image_lookbook') ?>

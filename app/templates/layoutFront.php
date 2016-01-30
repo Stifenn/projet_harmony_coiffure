@@ -234,13 +234,13 @@
           <p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
             <br>We do what we love. Our clients love what we do.</p>
             <div class="container demo-1">
-      <ul class="grid cs-style-1">
+      
           <div id='lookbook'>
             <?= $this->section('show_image_lookbook') ?>
           </div>
           
         </div>
-      </ul>
+    
     </div><!-- /container -->
         </div>
       </div>
