@@ -34,7 +34,7 @@
     	<div class="col-sm-offset-2 col-sm-10">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="checkbox" id="checkboxlost" /> Mot de passe perdu ?
+					<input type="checkbox" name="checkbox" id="checkboxlost" /> <strong>Mot de passe perdu ?</strong>
 				</label>
 			</div>
 		</div>
@@ -55,6 +55,6 @@
 		</form>
 		<hr>
 	<div class="col-sm-offset-2 col-sm-10">
-		<a href="<?= $this->url('home') ?>">Retour accueil</a>
+		<a href="<?= $this->url('home') ?>">Retourner à l'accueil</a>
 	</div>
 <?php $this->stop('main_content') ?>

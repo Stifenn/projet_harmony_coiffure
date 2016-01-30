@@ -250,10 +250,10 @@ class UserController extends Controller
 			// je verifie si les champs nom et prenom sont remplis
 			if ( isset($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom']) ) {
 				
-				$nom = trim(mb_strtolower($_POST['nom'], 'UTF-8'));
-				$prenom = trim(mb_strtolower($_POST['prenom'], 'UTF-8'));
-				$nomDB = mb_strtolower($currentUser['nom'], 'UTF-8');
-				$prenomDB = mb_strtolower($currentUser['prenom'], 'UTF-8');
+				$nom = trim($this->minusculesSansAccents($_POST['nom']));
+				$prenom = trim($this->minusculesSansAccents($_POST['prenom']));
+				$nomDB = $this->minusculesSansAccents($currentUser['nom']);
+				$prenomDB = $this->minusculesSansAccents($currentUser['prenom']);
 
 				if ($nom == $nomDB && $prenom == $prenomDB) {
 					$this->show('user/recup_user', ['currentUser' => $currentUser]);
@@ -334,5 +334,31 @@ class UserController extends Controller
 		$result = htmlspecialchars($result);
 		$result = filter_var($result, FILTER_SANITIZE_STRING);
 		return $result;
+	}
+
+	// fonction qui met les lettres en minuscule et enlève les accents
+	public function minusculesSansAccents($texte)
+	{
+    $texte = mb_strtolower($texte, 'UTF-8');
+    $texte = str_replace(
+        array(
+            'à', 'â', 'ä', 'á', 'ã', 'å',
+            'î', 'ï', 'ì', 'í', 
+            'ô', 'ö', 'ò', 'ó', 'õ', 'ø', 
+            'ù', 'û', 'ü', 'ú', 
+            'é', 'è', 'ê', 'ë', 
+            'ç', 'ÿ', 'ñ', 
+        ),
+        array(
+            'a', 'a', 'a', 'a', 'a', 'a', 
+            'i', 'i', 'i', 'i', 
+            'o', 'o', 'o', 'o', 'o', 'o', 
+            'u', 'u', 'u', 'u', 
+            'e', 'e', 'e', 'e', 
+            'c', 'y', 'n', 
+        ),
+        $texte
+    );
+    return $texte;        
 	}
 }
