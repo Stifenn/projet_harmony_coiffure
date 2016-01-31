@@ -36,6 +36,8 @@
 		['GET', 		'/profil', 						'User#profil', 								'profil'],
 		['POST', 		'/profil/update/[:id]', 		'User#updateUser', 							'update_user'],
 		['POST', 		'/profil/delete/[:id]', 		'User#deleteUser', 							'delete_user'],
+		['GET', 		'/admin/profil', 				'User#profilTeam', 							'profil_team'],
+		['POST', 		'/admin/profil/update/[:id]', 	'User#updateUserTeam', 						'update_user_team'],
 
 		/* admin ou staff, gestion et création de compte */
 		['GET|POST', 	'/admin/comptes', 				'User#manage', 								'manage'],

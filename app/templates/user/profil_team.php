@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Votre profil']) ?>
+<?php $this->layout('layoutBack', ['title' => 'Votre profil']) ?>
 
 <?php $this->start('main_content') ?>
 	<p>Votre nom : <?= $user['nom'] ?></p>
@@ -6,37 +6,9 @@
 	<p>Votre email : <?= $user['email'] ?></p>
 	<br>
 	<hr>
-	<h4>Vos prestations</h4>
-	<?php
-		if ( isset($fiche) && !empty($fiche) ) : ?>
-			<div class="row">
-  				<div class="col-md-6 col-md-offset-3"> 
-					<table class="table table-striped table-hover">
-			  			<thead>
-			    			<tr class="success control-label">
-					      		<th class="control-label">Date</th>
-					      		<th>Description</th>
-					   	 	</tr>
-					 	</thead>
-			  			<tbody>
-			      		<?php foreach($fiche as $currentFiche) : ?>
-			      			<tr class="warning">
-			      				<td><?=$currentFiche['date']?></td>
-			      				<td><?=$currentFiche['description']?></td>
-							</tr>
-			      		<?php endforeach ?>
-			  			</tbody>
-					</table>
-				</div>
-			</div>	
-		<?php else : ?>
-			<div class="col-sm-offset-2 col-sm-10">
-				<p>Vous n'avez pas encore effectuer de prestation chez nous !</p>
-			</div>
-		<?php endif ?>
-	<hr>
+
 	<h4>Voulez-vous modifier votre profil ? <em>(vous pouvez modifier une ou plusieurs données à la fois)</em></h4>
-	<form class="form-horizontal" action="<?= $this->url('update_user', ['id' => $user['id']]) ?>" method="POST">
+	<form class="form-horizontal" action="<?= $this->url('update_user_team', ['id' => $user['id']]) ?>" method="POST">
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="nom">Nom</label>
 			<div class="col-sm-10">
@@ -80,28 +52,5 @@
 			</div>
 		</div>
 	</form>
-	<?php
-		// formulaire de suppression du compte par l'utilisation (client) seulement
-		if ($_SESSION['user']['role'] == 'client') : ?>
-			<hr>
-			<h4>Voulez-vous <strong>supprimer</strong> votre compte ?</h4>
-			<form class="form-horizontal" action="<?= $this->url('delete_user', ['id' => $user['id']]) ?>" method="POST">
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="password-client">Votre mot de passe actuel</label>
-					<div class="col-sm-10">
-						<input class="form-control" id="password-client" type="password" name="password-client" placeholder="Votre mot de passe actuel" require />
-						<span id="helpBlock1" class="help-block">Obligatoire pour valider la suppression de votre compte</span>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<input class="btn btn-danger" type="submit" id="delete-client" value="Supprimer" />
-					</div>
-				</div>
-			</form>
-	<?php endif; ?>
-	<div class="col-sm-offset-2 col-sm-10">
-		<a href="<?= $this->url('home') ?>">Retour à l'accueil</a>
-	</div>
 
 <?php $this->stop('main_content') ?>

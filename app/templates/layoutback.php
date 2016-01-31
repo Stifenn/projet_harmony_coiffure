@@ -95,7 +95,7 @@
 		            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
 		                <li class="divider"></li>
 	                    <li>
-	                        <a href="<?= $this->url('profil') ?>">
+	                        <a href="<?= $this->url('profil_team') ?>">
 	                        	<i class="fa fa-user fa-fw pull-right"></i>
 	                            Profile
 	                        </a>
@@ -178,7 +178,7 @@
 
            		<!-- Main content -->
 	            <section class="content">
-	               	<h2><?= $this->e($title) ?></h1>
+	               	<h1><?= $this->e($title) ?></h1>
 	             	<?= $this->section('main_content') ?>
 
 	                    <!-- Main row -->
