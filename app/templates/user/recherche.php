@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 	
-	<form class="form-horizontal"action="<?= $this->url('recherche')?>" method="post" accept-charset="utf-8">
+	<form class="form-horizontal" action="<?= $this->url('recherche')?>" method="post" accept-charset="utf-8">
 		<div class="form-group">
 			<label for="num-client" class="col-sm-2 control-label">Recherche client</label>
 			<div class="col-sm-10">
