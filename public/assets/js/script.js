@@ -37,7 +37,7 @@ $(function(){
 
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    console.log(latitude,longitude);
+
     calculateAndDisplayRoute(directionsService, directionsDisplay,latitude,longitude);
     document.getElementById('mode').addEventListener('change', function() {
       calculateAndDisplayRoute(directionsService, directionsDisplay,latitude,longitude);

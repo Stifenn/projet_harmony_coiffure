@@ -16,13 +16,24 @@ class DefaultController extends Controller
 		$commentairesManager = new \manager\CommentairesManager();
 		$TarifsManager = new \manager\TarifsManager();
 		$produitManager = new \manager\ProduitsManager();
+		$images_slidersManager = new \manager\images_slidersManager();
+		$Images_sitesManager = new \manager\Images_sitesManager();
 		if(isset($_REQUEST) && !empty($_REQUEST)){
 			$insertCommentaire= $commentairesManager ->insertCommentaireHome($_REQUEST['name'],$_REQUEST['email'],$_REQUEST['message']);
 		}
 		$showCommentaire =$commentairesManager->showCommentairesHome();
 		$tarif = $TarifsManager->showTarif();
 		$produit = $produitManager->showProduit();
-		$this->show('default/home',['insertCommentaire'=>$insertCommentaire,'showCommentaire'=>$showCommentaire,'tarif'=>$tarif,'produit'=>$produit]);
+		$slider = $images_slidersManager->showSliderHome();
+		$imageSite = $Images_sitesManager->showImagesSiteHome();
+		$this->show('default/home',[
+					'insertCommentaire'=>$insertCommentaire,
+					'showCommentaire'=>$showCommentaire,
+					'tarif'=>$tarif,
+					'produit'=>$produit,
+					'slider'=>$slider,
+					'imageSite'=>$imageSite,
+				]);
 	}
 
 	/**

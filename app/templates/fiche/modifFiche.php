@@ -1,7 +1,6 @@
 <?php $this->layout('layoutBack', ['title' => 'modification d\'une fiche']) ?>
 
 <?php $this->start('main_content') ?>
-	 
 	<table>
 		<thead>
 	    	<tr>
@@ -21,7 +20,7 @@
 
 	<form  id="formRecherche" action="<?=$this->url('prestation')?>" method="post" accept-charset="utf-8">
 		<input type="text" name="nom" placeholder="Nom">
-		<input type="hidden" name="idFiche" value="<?= $_POST['fiche-id']?>">
+		<input type="hidden" name="idFiche" value="<?= $prestation[0]['id_fiches_rdv']?>">
 		<textarea name="description" placeholder="Description"></textarea>
 		<input type="submit" name="submit" value="Envoyer">
 	</form>

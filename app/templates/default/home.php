@@ -31,6 +31,47 @@
 
 <?php $this->stop('main_content') ?>
 
+	<!--
+
+	SLIDER
+
+	-->
+
+<?php $this->start('slider')?>
+
+<?php foreach($slider as $currentSlider) : ?>
+	<li><img src="<?=$this->assetUrl($currentSlider['chemin'])?>" alt="<?=$currentSlider['label']?>" /></li>
+<?php endforeach ?>
+
+<?php $this->stop('slider')?>
+
+<!--
+
+	LE SALON
+
+	-->
+
+<?php $this->start('about')?>
+
+<?php foreach($imageSite as $currentImageSite) : ?>
+	<?php if($currentImageSite['position'] == 'top') : ?>
+		<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+		<?php endif ?>
+	<?php if($currentImageSite['position'] == 'left' || $currentImageSite['position'] == 'middle' || $currentImageSite['position'] == 'right') :?>	
+      	<div class=" w-col w-col-4">
+			<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+        </div>
+    <?php endif ?>    	
+<?php endforeach ?>
+
+<?php $this->stop('about')?>
+
+<!--
+
+	TARIF
+
+	-->
+
 <?php $this->start('tarif') ?>
 	<table>
 	  <thead>
@@ -52,6 +93,12 @@
 	</table>
 <?php $this->stop('tarif') ?>
 
+<!--
+
+	PRODUIT
+
+	-->
+
 <?php $this->start('produit') ?>
 <?php foreach($produit as $CurrentProduit) :?>
 	<li>
@@ -66,6 +113,12 @@
     </li>
 <?php endforeach ?>
 <?php $this->stop('produit') ?>
+
+<!--
+
+	AJOUT COMMENTAIRE
+
+	-->
 
 
 <?php $this->start('Ajout_Commentaire') ?>
@@ -82,6 +135,12 @@
 
 <?php $this->stop('Ajout_Commentaire') ?>
 
+<!--
+
+	COMMENTAIRE
+
+	-->
+
 <?php $this->start('commentaire') ?>
 
 <?php foreach($showCommentaire as $currentShowComment) :?>
@@ -93,18 +152,21 @@
 
 <?php $this->stop('commentaire') ?>
 
+<!--
+
+	GOOGLE
+
+	-->
+
 <?php $this->start('google') ?>
-
-<title>Travel modes in directions</title>
-
-    <div id="floating-panel">
-    <b>Mode of Travel: </b>
-    <select id="mode">
-      <option value="DRIVING">Driving</option>
-      <option value="WALKING">Walking</option>
-      <option value="BICYCLING">Bicycling</option>
-    </select>
-    </div>
-    <div id="map" class="class="w-widget w-widget-map contac-map"" onload="initMap()"></div>
+<div id="floating-panel">
+	<b>Mode of Travel: </b>
+	<select id="mode">
+	  <option value="DRIVING">Driving</option>
+	  <option value="WALKING">Walking</option>
+	  <option value="BICYCLING">Bicycling</option>
+	</select>
+</div>
+<div id="map" onload="initMap()"></div>
     
 <?php $this->stop('google') ?>
