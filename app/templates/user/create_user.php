@@ -10,7 +10,7 @@
 	<div class="col-md-offset-2 col-md-10">
 		<p><strong>Avez-vous un numéro de client ?</strong></p>
 		<span class="help-block">(compte créer directement au salon, on vous a donné
-		une carte de visite avec ce numéro ou contactez nous : XX XX XX XX XX)
+		une carte de visite avec ce numéro ou contactez nous : 03 82 21 75 78)
 		</span>
 	</div>
 	<div class="radio row col-md-offset-2 col-md-10">
