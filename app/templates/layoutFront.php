@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Elegance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/styleUser.css')?>">
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/normal.css')?>">
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/style.css')?>">
   <link rel="stylesheet" href="<?= $this->assetUrl('css/css_theme_front/animation.css')?>">
@@ -105,6 +106,8 @@
       </div>
     </div>
   </div>
+
+  <?=$this->section('div_fixe')?>
 
   <!--///////////////////////////////////////////////////////
        //  Slider section 

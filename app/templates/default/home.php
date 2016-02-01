@@ -7,7 +7,7 @@
 	</button>
 	<div id="user">
 	<?php
-		// Si il n'y a pas de session active j'affiche le lien de connexion
+		// Si il n'y a pas de session active j'affiche les lien de connexion et de création de compte
 		if (!isset($_SESSION['user'])) : ?>
 			<a href="<?= $this->url('login') ?>">Se connecter</a> | 
 			<a href="<?= $this->url('create_user') ?>">Créer un compte</a>
@@ -16,17 +16,18 @@
 	<?php
 		// si la session est active
 		if(isset($_SESSION['user'])) :
-			// on affiche le nom et l'email de l'utilisateur ?>
-				<?= $_SESSION['user']['nom'] ?>
+			// on affiche le prenom et l'email de l'utilisateur ?>
+				<strong><?= $_SESSION['user']['prenom'] ?></strong>
 				<br>
 				(<em><?= $_SESSION['user']['email'] ?></em>)<br>
 				<?php
 					// si on est admin ou un employé, on affiche un lien vers la gestion
 					if ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['role'] == 'staff') : ?>
 						<a href="<?= $this->url('admin') ?>">Gestion</a> | 
-					<?php endif;
-				// si on est connecté on propose un lien son profil et de déconnexion ?>
-				<a href="<?= $this->url('profil') ?>">Profil</a> | 
+					<?php else : ?>
+				<!-- si on est connecté on propose un lien profil pour les clients et déconnexion pour tous -->
+						<a href="<?= $this->url('profil') ?>">Profil</a> |
+					<?php endif ?> 
 				<a href="<?= $this->url('logoff') ?>">Déconnexion</a>
 	<?php endif; ?>
 	</div>
@@ -106,11 +107,11 @@
 <?php foreach($produit as $CurrentProduit) :?>
 	<li>
       <figure>
-        <img class="portfolio-images" src="<?=$CurrentProduit['chemin']?>" alt="<?=$CurrentProduit['label']?>">
+        <img class="portfolio-images" src="<?=$this->assetUrl($CurrentProduit['chemin'])?>" alt="<?=$CurrentProduit['label']?>">
         <figcaption>
           <h3><?=$CurrentProduit['nom']?></h3>
           <span><?=$CurrentProduit['description']?></span>
-          <a href="#">Take a look</a>
+          <!--<a href="#">Take a look</a>-->
         </figcaption>
       </figure>
     </li>
