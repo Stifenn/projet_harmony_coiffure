@@ -8,14 +8,9 @@
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/normal.css')?>">
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/style.css')?>">
   <link rel="stylesheet" href="<?= $this->assetUrl('css/css_theme_front/animation.css')?>">
-<<<<<<< HEAD
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true"
         async defer></script>
-  <script>
-    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
-  </script>
-=======
   <!-- fancybox -->
   <link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -23,31 +18,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
       <!-- jQuery UI 1.10.3 -->
   <script src="<?= $this->assetUrl('js/js_theme/jquery-ui-1.10.3.min.js') ?>" type="text/javascript"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true&callback=initMap"
-        async defer></script>
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
   <!-- Add jQuery library -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/normal.js')?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/carousels.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
   <script src="<?= $this->assetUrl('js/js_theme_front/classie.js')?>"></script>
   <script src="<?= $this->assetUrl('js/js_theme_front/portfolio-effects.js')?>"></script>
   <script src="<?= $this->assetUrl('js/js_theme_front/toucheffects.js')?>"></script>
   <script src="<?= $this->assetUrl('js/js_theme_front/modernizr.js')?>"></script>
   <script src="<?= $this->assetUrl('js/js_theme_front/animation.js')?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/script.js')?>"></script>
    <!-- fancybox -->
   <script type="text/javascript" src="<?= $this->assetUrl('lib/jquery.mousewheel-3.0.6.pack.js') ?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('source/jquery.fancybox.pack.js?v=2.1.5')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/script.js')?>"></script>
->>>>>>> new_branche__stifenn_jour11
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery-1.10.2.min.js')?>"></script>
 </head>
 <body>
   <div class="fix-header" id="home">
@@ -215,8 +206,6 @@
 <!--///////////////////////////////////////////////////////
        // End Service section 
        //////////////////////////////////////////////////////////-->
-
-<<<<<<< HEAD
 
 <!--///////////////////////////////////////////////////////
        // debut Produit section 
