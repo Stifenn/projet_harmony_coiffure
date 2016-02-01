@@ -94,6 +94,7 @@ class DefaultController extends Controller
 	 */
 	public function admin()
 	{
+		$this->allowTo(['admin','staff']);
 		$this->show('default/admin');
 	}
 

@@ -1,10 +1,6 @@
 <?php $this->layout('layoutFront', ['title' => 'Accueil !']) ?>
 
 <?php $this->start('div_fixe') ?>
-	<button class="btn btn-default" id="control" type="button">
-		<span id="glyph-left" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-		<span id="glyph-right" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-	</button>
 	<div id="user">
 	<?php
 		// Si il n'y a pas de session active j'affiche les lien de connexion et de création de compte

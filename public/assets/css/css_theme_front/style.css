@@ -16,10 +16,7 @@ body {
   color: #b3b9bf;
   background: #f9f9f9;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> new_branche__stifenn_jour11
 h1 {
   margin: 10px 0px;
   color: white;
@@ -307,11 +304,7 @@ a:active {
     left: 50%;
     width: 9px;
     height: 9px;
-<<<<<<< HEAD
-    z-index: 1;
-=======
     z-index: 1001;
->>>>>>> new_branche__stifenn_jour11
     cursor: pointer;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
@@ -325,11 +318,7 @@ a:active {
     width: 6px;
     height: 6px;
     display: block;
-<<<<<<< HEAD
-    z-index: 2;
-=======
     z-index: 1000;
->>>>>>> new_branche__stifenn_jour11
     border: 3px solid #fff;
     border: 3px solid rgba(255,255,255,0.9);
     -webkit-border-radius: 50%;
@@ -371,11 +360,7 @@ a:active {
     display: none;
     opacity: 0.8;
     cursor: pointer;
-<<<<<<< HEAD
-    z-index: 2;
-=======
     z-index: 1000;
->>>>>>> new_branche__stifenn_jour11
     background: transparent url(../images/slider/arrows.png) no-repeat;
     -webkit-transition: opacity linear 0.3s;
     -moz-transition: opacity linear 0.3s;
@@ -754,15 +739,9 @@ input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5){
   color: #fff;
 }
 
-<<<<<<< HEAD
 /* .grid figcaption span:before {
   content: 'by ';
 } */
-=======
-.grid figcaption span:before {
-  content: 'by ';
-}
->>>>>>> new_branche__stifenn_jour11
 
 .portfolio-images {
   border: 10px solid #FFF;
@@ -1363,11 +1342,7 @@ font-size: 18px;
 }
 .call-to-action {
   background-color: #303030;
-<<<<<<< HEAD
-  background-image: url('../images/banniere-longue.png');
-=======
   background-image: none;
->>>>>>> new_branche__stifenn_jour11
   background-position: 0% 0%;
   background-size: auto;
   background-repeat: repeat;
@@ -1875,7 +1850,6 @@ html { overflow-y: scroll; }
   opacity: 1.0;
 }
 
-<<<<<<< HEAD
 /*.table responsive*/
 table {
   width: 100%;
@@ -1962,7 +1936,22 @@ blockquote.pull-right .small:after {
   line-height: 30px;
   padding-left: 10px;
 }
-=======
+
+/* div id#user qui s'affiche a gauche avec différents liens */
+#user {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  border: 2px solid #CCC;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #FFFFFF;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  z-index: 9999;
+}
+
 /*fancybox*/
 .hidden {
  display: none;   
@@ -2012,8 +2001,6 @@ blockquote.pull-right .small:after {
 }
 
 
-
-
 /*image lookbook sans deformation*/
 
 /*#lookbook
@@ -2038,4 +2025,4 @@ blockquote.pull-right .small:after {
   width: 150px;
   height: 150px;
 }*/
->>>>>>> new_branche__stifenn_jour11
+

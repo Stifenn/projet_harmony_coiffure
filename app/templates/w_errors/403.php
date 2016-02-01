@@ -3,7 +3,7 @@
 <?php $this->start('main_content'); ?>
 
 <div class="col-sm-offset-2 col-sm-10">
-	<h1>Il n'y a tien à voir ici !</h1>
+	<h1>ERREUR 403 : Il n'y a Rien à voir ici !</h1>
 </div>
 <div class="col-sm-offset-2 col-sm-10">
 	<a href="<?= $this->url('home') ?>">Retourner à l'accueil</a>

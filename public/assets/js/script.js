@@ -116,6 +116,11 @@ $(function(){
                       this.title = el.html();
                   }
               }
+          },
+          helpers: {
+            overlay: {
+              locked: false
+            }
           }
       });
 });
