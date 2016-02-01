@@ -134,7 +134,6 @@ class UserController extends Controller
 		$user = $userManager->find($userId);
 
 		// recupération des fiches_rdv et des prestations associées
-		//$ficheManager = new \Manager\Fiches_rdvsManager();
 		$fiche = $userManager->getFicheClient($userId);
 
 
@@ -209,7 +208,9 @@ class UserController extends Controller
 									'nom' => $nom,
 									'prenom' => $prenom],
 									$userId);
-						$this->redirectToRoute('profil');
+					$_SESSION['user']['prenom'] = $prenom;
+					$_SESSION['user']['nom'] = $nom;
+					$this->redirectToRoute('profil');
 				}
 			}
 		}

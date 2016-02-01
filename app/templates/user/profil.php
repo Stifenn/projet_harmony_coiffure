@@ -8,13 +8,13 @@
 	<hr>
 	<h4>Vos prestations</h4>
 	<?php
-		if ( isset($fiche) && !empty($fiche) ) : ?>
+		if ( isset($fiche) && !empty($fiche) && !empty($fiche[0]['date']) ) : ?>
 			<div class="row">
   				<div class="col-md-6 col-md-offset-3"> 
 					<table class="table table-striped table-hover">
 			  			<thead>
 			    			<tr class="success control-label">
-					      		<th class="control-label">Date</th>
+					      		<th>Date</th>
 					      		<th>Description</th>
 					   	 	</tr>
 					 	</thead>
@@ -30,8 +30,10 @@
 				</div>
 			</div>	
 		<?php else : ?>
-			<div class="col-sm-offset-2 col-sm-10">
-				<p>Vous n'avez pas encore effectuer de prestation chez nous !</p>
+			<div class="row">
+				<div class="form-group col-sm-offset-2 col-sm-10">
+					<p>Vous n'avez pas encore effectuer de prestation chez nous !</p>
+				</div>
 			</div>
 		<?php endif ?>
 	<hr>

@@ -5,8 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title><?= $this->e($title) ?></title>
-<!-- 	<link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
- -->	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.min.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styleUser.css') ?>">
 </head>
 <body>
