@@ -16,7 +16,10 @@ body {
   color: #b3b9bf;
   background: #f9f9f9;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> new_branche__stifenn_jour11
 h1 {
   margin: 10px 0px;
   color: white;
@@ -304,7 +307,11 @@ a:active {
     left: 50%;
     width: 9px;
     height: 9px;
+<<<<<<< HEAD
     z-index: 1;
+=======
+    z-index: 1001;
+>>>>>>> new_branche__stifenn_jour11
     cursor: pointer;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
@@ -318,7 +325,11 @@ a:active {
     width: 6px;
     height: 6px;
     display: block;
+<<<<<<< HEAD
     z-index: 2;
+=======
+    z-index: 1000;
+>>>>>>> new_branche__stifenn_jour11
     border: 3px solid #fff;
     border: 3px solid rgba(255,255,255,0.9);
     -webkit-border-radius: 50%;
@@ -360,7 +371,11 @@ a:active {
     display: none;
     opacity: 0.8;
     cursor: pointer;
+<<<<<<< HEAD
     z-index: 2;
+=======
+    z-index: 1000;
+>>>>>>> new_branche__stifenn_jour11
     background: transparent url(../images/slider/arrows.png) no-repeat;
     -webkit-transition: opacity linear 0.3s;
     -moz-transition: opacity linear 0.3s;
@@ -739,9 +754,15 @@ input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5){
   color: #fff;
 }
 
+<<<<<<< HEAD
 /* .grid figcaption span:before {
   content: 'by ';
 } */
+=======
+.grid figcaption span:before {
+  content: 'by ';
+}
+>>>>>>> new_branche__stifenn_jour11
 
 .portfolio-images {
   border: 10px solid #FFF;
@@ -1342,7 +1363,11 @@ font-size: 18px;
 }
 .call-to-action {
   background-color: #303030;
+<<<<<<< HEAD
   background-image: url('../images/banniere-longue.png');
+=======
+  background-image: none;
+>>>>>>> new_branche__stifenn_jour11
   background-position: 0% 0%;
   background-size: auto;
   background-repeat: repeat;
@@ -1850,6 +1875,7 @@ html { overflow-y: scroll; }
   opacity: 1.0;
 }
 
+<<<<<<< HEAD
 /*.table responsive*/
 table {
   width: 100%;
@@ -1936,3 +1962,80 @@ blockquote.pull-right .small:after {
   line-height: 30px;
   padding-left: 10px;
 }
+=======
+/*fancybox*/
+.hidden {
+ display: none;   
+}
+.fancybox-title a {
+ color: #fff;        
+}
+
+/*style de la page du lookbook*/
+
+#lookbook
+{
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+#lookbook img
+{
+  border-radius: 50%;
+  border:4px solid white;
+
+  /*border radius blanc*/
+  -moz-box-shadow: 10px 15px 50px 0px #ffffff;
+  -webkit-box-shadow: 10px 15px 50px 0px #ffffff;
+  -o-box-shadow: 10px 15px 50px 0px #ffffff;
+  box-shadow: 10px 15px 50px 0px #ffffff;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#ffffff, Direction=146, Strength=50);
+  
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.image_lookbook
+{
+  float: left;
+  margin-left: 20px;
+}
+
+/*responsive du lookbook */
+
+@media screen and (max-width: 418px){
+    .image_lookbook {margin-left: 20px; }
+}
+@media screen and (max-width: 25em){
+    .image_lookbook {margin-left: -35px; }
+}
+
+
+
+
+/*image lookbook sans deformation*/
+
+/*#lookbook
+{
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+#lookbook img
+{
+  border-radius: 50%;
+  border:1px solid white;
+  max-height: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.image_lookbook
+{
+  float: left;
+  margin-left: 20px;
+  width: 150px;
+  height: 150px;
+}*/
+>>>>>>> new_branche__stifenn_jour11

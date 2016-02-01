@@ -13,4 +13,11 @@
 		$sth->bindValue(':numero' , $numero);
 		return $sth->execute();
 	}
+
+	public function show_image_lookbook(){
+		$sql = 'SELECT chemin, label,numero FROM images_lookbooks';
+		$sth = $this->dbh->query($sql);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 }

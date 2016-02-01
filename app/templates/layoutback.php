@@ -2,68 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Director | Dashboard</title>
+    <title>Administration</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
     <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
+
 <!-- Style css -->
     <!-- bootstrap 3.0.2 -->
     <link href="<?= $this->assetUrl('css/css_theme/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
     <!-- font Awesome -->
     <link href="<?= $this->assetUrl('css/css_theme/font-awesome.min.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="<?= $this->assetUrl('css/css_theme/ionicons.min.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- Morris chart -->
-    <link href="<?= $this->assetUrl('css/css_theme/morris/morris.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- jvectormap -->
-    <link href="<?= $this->assetUrl('css/css_theme/jvectormap/jquery-jvectormap-1.2.2.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- Date Picker -->
-    <link href="<?= $this->assetUrl('css/css_theme/datepicker/datepicker3.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- Daterange picker -->
-    <link href="<?= $this->assetUrl('css/css_theme/daterangepicker/daterangepicker-bs3.css') ?>" rel="stylesheet" type="text/css" />
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link href="<?= $this->assetUrl('css/css_theme/iCheck/all.css') ?>" rel="stylesheet" type="text/css" />
-
+    <!-- Font -->
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="<?= $this->assetUrl('css/css_theme/style.css') ?>" rel="stylesheet" type="text/css" />
-
+    <!-- style du back -->
     <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/styleBack.css') ?>">
+    <!-- fancybox -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
-
-
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-          <![endif]-->
-
-<!-- Javascript -->
+    <!-- Javascript -->
 	<!-- jQuery 2.0.2 -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- jQuery UI 1.10.3 -->
     <script src="<?= $this->assetUrl('js/js_theme/jquery-ui-1.10.3.min.js') ?>" type="text/javascript"></script>
     <!-- Bootstrap -->
     <script src="<?= $this->assetUrl('js/js_theme/bootstrap.min.js') ?>" type="text/javascript"></script>
-    <!-- daterangepicker -->
-    <script src="<?= $this->assetUrl('js/js_theme/plugins/daterangepicker/daterangepicker.js') ?>" type="text/javascript"></script>
-
-    <script src="<?= $this->assetUrl('js/js_theme/plugins/chart.js') ?>" type="text/javascript"></script>
-    <!-- iCheck -->
-    <script src="<?= $this->assetUrl('js/js_theme/plugins/iCheck/icheck.min.js') ?>" type="text/javascript"></script>
-    <!-- calendar -->
-    <script src="<?= $this->assetUrl('js/js_theme/plugins/fullcalendar/fullcalendar.js') ?>" type="text/javascript"></script>
     <!-- Director App -->
     <script src="<?= $this->assetUrl('js/js_theme/Director/app.js') ?>" type="text/javascript"></script>
-    <!-- Director dashboard demo (This is only for demo purposes) -->
-    <script src="<?= $this->assetUrl('js/js_theme/Director/dashboard.js') ?>" type="text/javascript"></script>
     <!-- fancybox -->
-
     <script type="text/javascript" src="<?= $this->assetUrl('lib/jquery.mousewheel-3.0.6.pack.js') ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('source/jquery.fancybox.pack.js?v=2.1.5')?>"></script>
 	<!-- JS scriptBack -->
@@ -120,9 +86,6 @@
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="../assets/img/img_theme/26115.jpg" class="img-circle" alt="User Image" />
-                        </div>
                         <div class="pull-left info">
                             <p>Hello, <?= $_SESSION['user']['prenom'] ?></p>
                             <a href="#">
@@ -132,9 +95,9 @@
                         </div>
                     </div>
                     <!-- search form -->
-                    <form action="#" method="get" class="sidebar-form">
+                    <form action="<?= $this->url('recherche') ?>" method="post" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="name" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
@@ -186,7 +149,7 @@
 	            </section>
                	<div class="footer-main">
                 <a href="<?= $this->url('home') ?>">Accueil</a>
-                    Copyright &copy Director, 2014
+                    Copyright &copy Santaniello, Duché, Gaschen, 2016
                 </div>
             </aside> <!-- /.right-side -->
 

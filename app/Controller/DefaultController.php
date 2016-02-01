@@ -18,6 +18,7 @@ class DefaultController extends Controller
 		$produitManager = new \manager\ProduitsManager();
 		$images_slidersManager = new \manager\images_slidersManager();
 		$Images_sitesManager = new \manager\Images_sitesManager();
+		$show_images_lookbook = new \Manager\images_lookbooksManager();
 		if(isset($_REQUEST) && !empty($_REQUEST)){
 			$insertCommentaire= $commentairesManager ->insertCommentaireHome($_REQUEST['name'],$_REQUEST['email'],$_REQUEST['message']);
 		}
@@ -26,6 +27,7 @@ class DefaultController extends Controller
 		$produit = $produitManager->showProduit();
 		$slider = $images_slidersManager->showSliderHome();
 		$imageSite = $Images_sitesManager->showImagesSiteHome();
+		$show_lookbook = $show_images_lookbook->show_image_lookbook();
 		$this->show('default/home',[
 					'insertCommentaire'=>$insertCommentaire,
 					'showCommentaire'=>$showCommentaire,
@@ -33,7 +35,11 @@ class DefaultController extends Controller
 					'produit'=>$produit,
 					'slider'=>$slider,
 					'imageSite'=>$imageSite,
+					'show_lookbook'=> $show_lookbook,
 				]);
+
+		
+
 	}
 
 	/**

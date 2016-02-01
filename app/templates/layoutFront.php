@@ -7,16 +7,46 @@
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/normal.css')?>">
   <link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/css_theme_front/style.css')?>">
   <link rel="stylesheet" href="<?= $this->assetUrl('css/css_theme_front/animation.css')?>">
+<<<<<<< HEAD
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true"
         async defer></script>
-  <script src="<?= $this->assetUrl('js/jquery-2.2.0.min.js') ?>" type="text/javascript" charset="utf-8"></script>
-  <script src="<?= $this->assetUrl('js/script.js') ?>" type="text/javascript" charset="utf-8" async defer></script>
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
+=======
+  <!-- fancybox -->
+  <link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <!-- jQuery UI 1.10.3 -->
+  <script src="<?= $this->assetUrl('js/js_theme/jquery-ui-1.10.3.min.js') ?>" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true&callback=initMap"
+        async defer></script>
+  <script>
+    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  </script>
+  <!-- Add jQuery library -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/normal.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/carousels.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/classie.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/portfolio-effects.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/toucheffects.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/modernizr.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/animation.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
+   <!-- fancybox -->
+  <script type="text/javascript" src="<?= $this->assetUrl('lib/jquery.mousewheel-3.0.6.pack.js') ?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('source/jquery.fancybox.pack.js?v=2.1.5')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/script.js')?>"></script>
+>>>>>>> new_branche__stifenn_jour11
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery-1.10.2.min.js')?>"></script>
 </head>
 <body>
   <div class="fix-header" id="home">
@@ -92,7 +122,7 @@
         
         <input id="button-3" type="radio" name="radio-set" class="sp-selector-3" />
         <label for="button-3" class="button-label-3"></label>
-        
+       
         <!-- <input id="button-4" type="radio" name="radio-set" class="sp-selector-4" />
         <label for="button-4" class="button-label-4"></label>
         
@@ -109,11 +139,9 @@
         <div class="sp-content">
           <div class="sp-parallax-bg"></div>
           <ul class="sp-slider clearfix">
-          <?=$this->section('slider');?>
-            
+            <?=$this->section('slider');?>  
           </ul>
         </div><!-- sp-content -->
-        
       </div><!-- sp-slideshow -->
   </div>
 
@@ -185,12 +213,13 @@
        // End Service section 
        //////////////////////////////////////////////////////////-->
 
+<<<<<<< HEAD
 
 <!--///////////////////////////////////////////////////////
        // debut Produit section 
        //////////////////////////////////////////////////////////-->
 
- <div class="portfolio-parlex" id="portfolio">
+ <div class="portfolio-parlex" id="produit">
     <div class="parlex5-back">
       <div class="w-container">
         <div class="wrap">
@@ -201,10 +230,37 @@
           <p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
             <br>We do what we love. Our clients love what we do.</p>
             <div class="container demo-1">
-      <ul class="grid cs-style-1">
-      <?=$this->section('produit')?>
-      </ul>
-    </div><!-- /container -->
+              <ul class="grid cs-style-1">
+                <?=$this->section('produit')?>
+              </ul>
+            </div><!-- /container -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--///////////////////////////////////////////////////////
+       // Porfolio section 
+       //////////////////////////////////////////////////////////-->
+
+  <div class="portfolio-parlex" id="portfolio">
+    <div class="parlex3-back">
+      <div class="w-container">
+        <div class="wrap">
+          <div class="portfolio">
+            <h1 class="portfolio-heading">PORTFOLIO</h1>
+            <div class="portfolio-text">OUR WORK</div>
+            <div class="sepreater"></div>
+          </div>
+          <p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
+            <br>We do what we love. Our clients love what we do.</p>
+            <div class="container demo-1">
+              <ul class="grid cs-style-1">
+                <div id='lookbook'>
+                  <?= $this->section('show_image_lookbook') ?>
+                </div>
+              </ul>
+            </div><!-- /container -->
         </div>
       </div>
     </div>
@@ -213,7 +269,6 @@
 <!--///////////////////////////////////////////////////////
        // End Produit section 
        //////////////////////////////////////////////////////////-->
-
 
 
 
@@ -308,25 +363,24 @@
        // Contact section 
        //////////////////////////////////////////////////////////-->
 
-  <div class="contact-parlex" id="commentaire">
-    <div class="parlex8-back">
-      <div class="w-container">
-      
-        <div class="wrap">
-          <div class="contact-div">
-            <h1 class="contact-heading">COMMENTAIRES</h1>
-            <div class="sepreater"></div>
-          </div>
-          <p class="contact-para">Thanks for taking the time to contact us!
-            <br>We do our best to respond to quickly, it could take us 1-2 business days to get back to you. Feel free to say hello!</p>
-          <div class="w-form w-col w-col-4">
-            <?= $this->section('Ajout_Commentaire');?>
+<div class="contact-parlex" id="commentaire">
+  <div class="parlex8-back">
+    <div class="w-container">
+      <div class="wrap">
+        <div class="contact-div">
+          <h1 class="contact-heading">COMMENTAIRES</h1>
+          <div class="sepreater"></div>
         </div>
-          <div class="w-form w-col w-col-8">
-            <?= $this->section('commentaire');?>
-          </div>
+        <p class="contact-para">Thanks for taking the time to contact us!
+          <br>We do our best to respond to quickly, it could take us 1-2 business days to get back to you. Feel free to say hello!</p>
+        <div class="w-form w-col w-col-4">
+          <?= $this->section('Ajout_Commentaire');?>
+        </div>
+        <div class="w-form w-col w-col-8">
+          <?= $this->section('commentaire');?>
+        </div>
       </div>
-      </div>
+    </div>
       <?=$this->section('google') ?>
     <div class="contact-parlex" id="contact">
       <div class="parlex8-back">
@@ -334,14 +388,15 @@
           <div class="w-row contact-col">
             <div class="w-col w-col-4 contact-col2">
               <div>
-                 <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                         <div class="hi-icon hi-icon-mail">Partners</div>
-                      </div>
+                <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
+                    <div class="hi-icon hi-icon-mail">Partners</div>
+                </div>
                 <h4 class="contact-col-head">Contactez Nous</h4>
               </div>
               <div>
                 <div class="contact-col-text">general: office@elegance.com
-                <br/> </div>
+                  <br/> 
+                </div>
               </div>
               </div>
             <div class="w-col w-col-4 contact-col1">
@@ -359,13 +414,14 @@
             <div class="w-col w-col-4 contact-col3">
               <div>
                 <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                         <div class="hi-icon hi-icon-mobile">Partners</div>
-                      </div>
+                    <div class="hi-icon hi-icon-mobile">Partners</div>
+                </div>
                 <h4 class="contact-col-head">Appellez-Nous</h4>
               </div>
               <div>
                 <div class="contact-col-text-bar-last">03 82 21 75 78
-                <br/> </div>
+                  <br/> 
+                </div>
               </div>
             </div>
           </div>
@@ -378,10 +434,6 @@
        // End Contact section 
        //////////////////////////////////////////////////////////-->
 
-   
-      
-     
-     
 <!--///////////////////////////////////////////////////////
        // Footer section 
        //////////////////////////////////////////////////////////-->  
@@ -411,7 +463,7 @@
               <p class="copyright-area">©2014 ELEGANCE. ALL RIGHTS RESERVED,TEMPLATE BY&nbsp;<a href="https://carinotech.com" title="Carino Technologies" target="_blank">CARINO TECHNOLOGIES</a><br />
               MODIFIE PAR Stéphane Duché, Benoit Gaschen, Santaniello Benjamin
               </p>
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -422,16 +474,6 @@
        // End Footer section 
        //////////////////////////////////////////////////////////-->
 
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/normal.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery-1.10.2.min.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/carousels.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/classie.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/portfolio-effects.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/toucheffects.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/modernizr.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/animation.js')?>"></script>
 
 </body>
 </html>

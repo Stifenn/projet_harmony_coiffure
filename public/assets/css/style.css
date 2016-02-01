@@ -20,6 +20,7 @@ html, body {
   line-height: 30px;
   padding-left: 10px;
 }
+<<<<<<< HEAD
 
 /* div id#user qui s'affiche a gauche avec différents liens */
 #user {
@@ -46,3 +47,5 @@ html, body {
 #glyph-right{
   display: none;
 }
+=======
+>>>>>>> new_branche__stifenn_jour11
