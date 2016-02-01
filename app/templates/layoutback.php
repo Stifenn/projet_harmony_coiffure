@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Director | Dashboard</title>
+    <title>Administration</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
     <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
     <!-- Javascript -->
 	<!-- jQuery 2.0.2 -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- jQuery UI 1.10.3 -->
     <script src="<?= $this->assetUrl('js/js_theme/jquery-ui-1.10.3.min.js') ?>" type="text/javascript"></script>
     <!-- Bootstrap -->
@@ -97,7 +97,7 @@
                     <!-- search form -->
                     <form action="<?= $this->url('recherche') ?>" method="post" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="name" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
