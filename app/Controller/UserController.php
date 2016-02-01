@@ -58,7 +58,7 @@ class UserController extends Controller
 		$this->allowTo(['admin', 'staff']);
 
 		$usersManager = new \Manager\UserManager();
-		$users = $usersManager->findAll('email');
+		$users = $usersManager->findAll('role');
 
 		$this->show('user/manage', ['users' => $users]);
 	}
@@ -124,19 +124,36 @@ class UserController extends Controller
 	}
 
 	/**
-	 * Page de profil utilisateurs
+	 * Page de profil client
 	 */
 	public function profil()
 	{
+		$userId = $_SESSION['user']['id'];
+		// récupération des infos de l'utilisateur
+		$userManager = new \Manager\UserManager();
+		$user = $userManager->find($userId);
+
+		// recupération des fiches_rdv et des prestations associées
+		$fiche = $userManager->getFicheClient($userId);
+
+
+		$this->show('user/profil', ['user' => $user, 'fiche' => $fiche]);
+	}
+
+	/**
+	 * Page de profil admin ou staff
+	 */
+	public function profilTeam()
+	{
+		$this->allowTo(['admin', 'staff']);
+
 		$userManager = new \Manager\UserManager();
 		$user = $userManager->find($_SESSION['user']['id']);
 
-		// recupération des fiches_rdv et des prestations associées
-		// @todos
-		$this->show('user/profil', ['user' => $user]);
+		$this->show('user/profil_team', ['user' => $user]);
 	}
 
-	// Mise à jour de son profil (compte)
+	// Mise à jour de son profil (client)
 	public function updateUser($userId)
 	{
 		if(!is_numeric($userId)) {
@@ -191,12 +208,77 @@ class UserController extends Controller
 									'nom' => $nom,
 									'prenom' => $prenom],
 									$userId);
-						$this->redirectToRoute('profil');
+					$_SESSION['user']['prenom'] = $prenom;
+					$_SESSION['user']['nom'] = $nom;
+					$this->redirectToRoute('profil');
 				}
 			}
 		}
 		$this->show('user/profil_error', ['errorPass' => true]);
-		//$this->redirectToRoute('profil', ['errorPass' => true]);
+	}
+
+	// Mise à jour de son profil (admin ou staff)
+	public function updateUserTeam($userId)
+	{
+		$this->allowTo(['admin', 'staff']);
+
+		if(!is_numeric($userId)) {
+			$this->redirectToRoute('profil_team');
+		}
+
+		// je récupère la ligne en DB
+		$userManager = new \Manager\UserManager();
+		$currentUser = $userManager->find($userId);
+
+		// je compare le mdp rentré par l'utilisateur et celui en DB
+		if ( password_verify($_POST['password'], $currentUser['password']) ) {
+			// si c'est true
+			// je regarde si l'utilisateur veut changer son mot de passe (et plus)
+			if ( isset($_POST['password-new']) && isset($_POST['password-new-confirm']) && !empty($_POST['password-new']) && !empty($_POST['password-new-confirm']) ) {
+				// je compare si le nouveau mot de passe et la vérification du nouveau mot de passe sont egaux
+				if ( $_POST['password-new'] == $_POST['password-new-confirm']) {
+					// si oui, je teste les autres champs
+					if ( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) ) {
+						// on filtre les données
+						$nom = $this->filterData($_POST['nom']);
+						$prenom = $this->filterData($_POST['prenom']);
+						$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+						$userManager->update([
+									'nom' => $nom,
+									'prenom' => $prenom,
+									'email' => $email,
+									'password' => password_hash($_POST['password-new'], PASSWORD_DEFAULT)],
+									$userId);
+						$this->redirectToRoute('logoff');
+					}
+				} else { // les mdp sont différents
+					$this->show('user/profil_team_error', ['errorNewPass' => true]);
+				}
+				// si je ne change pas le mdp
+			} elseif ( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) ) {
+				// on filtre les données
+				$nom = $this->filterData($_POST['nom']);
+				$prenom = $this->filterData($_POST['prenom']);
+				$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+				// si je change l'email (et plus)
+				if ( $currentUser['email'] != $_POST['email'] ) {
+					$userManager->update([
+									'nom' => $nom,
+									'prenom' => $prenom,
+									'email' => $email],
+									$userId);
+						$this->redirectToRoute('logoff');
+				} else {
+					// on change juste le nom et/ou le prenom
+					$userManager->update([
+									'nom' => $nom,
+									'prenom' => $prenom],
+									$userId);
+						$this->redirectToRoute('profil_team');
+				}
+			}
+		}
+		$this->show('user/profil_team_error', ['errorPass' => true]);
 	}
 
 	// suppression de son compte par l'utilisateur
@@ -250,10 +332,10 @@ class UserController extends Controller
 			// je verifie si les champs nom et prenom sont remplis
 			if ( isset($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['prenom']) ) {
 				
-				$nom = trim(mb_strtolower($_POST['nom'], 'UTF-8'));
-				$prenom = trim(mb_strtolower($_POST['prenom'], 'UTF-8'));
-				$nomDB = mb_strtolower($currentUser['nom'], 'UTF-8');
-				$prenomDB = mb_strtolower($currentUser['prenom'], 'UTF-8');
+				$nom = trim($this->minusculesSansAccents($_POST['nom']));
+				$prenom = trim($this->minusculesSansAccents($_POST['prenom']));
+				$nomDB = $this->minusculesSansAccents($currentUser['nom']);
+				$prenomDB = $this->minusculesSansAccents($currentUser['prenom']);
 
 				if ($nom == $nomDB && $prenom == $prenomDB) {
 					$this->show('user/recup_user', ['currentUser' => $currentUser]);
@@ -335,4 +417,31 @@ class UserController extends Controller
 		$result = filter_var($result, FILTER_SANITIZE_STRING);
 		return $result;
 	}
+
+	// fonction qui met les lettres en minuscule et enlève les accents
+	public function minusculesSansAccents($texte)
+	{
+    $texte = mb_strtolower($texte, 'UTF-8');
+    $texte = str_replace(
+        array(
+            'à', 'â', 'ä', 'á', 'ã', 'å',
+            'î', 'ï', 'ì', 'í', 
+            'ô', 'ö', 'ò', 'ó', 'õ', 'ø', 
+            'ù', 'û', 'ü', 'ú', 
+            'é', 'è', 'ê', 'ë', 
+            'ç', 'ÿ', 'ñ', 
+        ),
+        array(
+            'a', 'a', 'a', 'a', 'a', 'a', 
+            'i', 'i', 'i', 'i', 
+            'o', 'o', 'o', 'o', 'o', 'o', 
+            'u', 'u', 'u', 'u', 
+            'e', 'e', 'e', 'e', 
+            'c', 'y', 'n', 
+        ),
+        $texte
+    );
+    return $texte;        
+	}
+
 }

@@ -39,33 +39,55 @@
 <div class="row">
   	<div class="col-md-6 col-md-offset-3">
 		
-		<p class="bg-primary">Créer un compte</p>
-		<form action="<?= $this->url('user_create') ?>" method="POST">
-			<label for="nom">Nom</label>
-			<input id="nom" type="text" name="nom" placeholder="Nom" required />
-
-			<label for="prenom">Prénom</label>
-			<input id="prenom" type="text" name="prenom" placeholder="Prénom" required />
-
+		<h4>Créer un compte</h4>
+		<form class="form-horizontal" action="<?= $this->url('user_create') ?>" method="POST">
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="nom">Nom</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="nom" type="text" name="nom" placeholder="Nom" required />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="prenom">Prénom</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="prenom" type="text" name="prenom" placeholder="Prénom" required />
+				</div>
+			</div>
 			<span id="staff" hidden>
-				<label for="email">Email</label>
-				<input type="email" name="email" placeholder="Email" id="email" />
-
-				<label for="password">Mot de passe</label>
-				<input type="password" name="password" placeholder="Mot de passe" id="password" />
-
-				<label for="password-confirm">Confirmer le mot de passe</label>
-				<input type="password" name="password-confirm" placeholder="Confirmer le mot de passe" id="password-confirm" />
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="email">Email</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="email" name="email" placeholder="Email" id="email" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="password">Mot de passe</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="password" name="password" placeholder="Mot de passe" id="password" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="password-confirm">Confirmer le mot de passe</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="password" name="password-confirm" placeholder="Confirmer le mot de passe" id="password-confirm" />
+					</div>
+				</div>
 			</span>
-			<select name="role" id="select-role">
-				<option value="client">Client</option>
-				<?php
-					// si on est l'admin on peut créer un compte employé (staff) sinon juste un compte client
-					if ($_SESSION['user']['role'] == 'admin') : ?>
-						<option value="staff">Employé</option>
-						<?php endif; ?>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<select class="form-control" name="role" id="select-role">
+						<option value="client">Client</option>
+						<?php
+							// si on est l'admin on peut créer un compte employé (staff) sinon juste un compte client
+							if ($_SESSION['user']['role'] == 'admin') : ?>
+								<option value="staff">Employé</option>
+								<?php endif; ?>
 					</select>
-					<input type="submit" class="btn btn-primary" value="Ajouter">
+				</div>
+			</div>
+			<div class="col-sm-offset-2 col-sm-10">
+				<input type="submit" class="btn btn-primary" value="Ajouter">
+			</div>
 		</form>
 	</div>
 </div>

@@ -3,6 +3,9 @@
 	//autochargement des classes
 	require("../vendor/autoload.php");
 
+	//chargement de phpmailer
+	require("../vendor/phpmailer/phpmailer/PHPMailerAutoload.php");
+	
 	//configuration
 	require("../app/config.php");
 

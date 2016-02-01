@@ -4,17 +4,23 @@ html, body {
   padding: 0;
 }
 
+body {
+  background-image: url('../img/img_form/background.jpg');
+}
+
 /* div id#user qui s'affiche a gauche avec différents liens */
 #user {
   position: fixed;
   top: 100px;
   left: 5px;
-  border: 2px solid black;
+  border: 2px solid #CCC;
+  border-radius: 5px;
   text-align: center;
   background-color: #FFFFFF;
   height: auto;
   width: auto;
   padding: 2px;
+  z-index: 1;
 }
 
 /* div id#user qui s'affiche a gauche avec différents liens */
@@ -22,10 +28,25 @@ html, body {
   position: fixed;
   top: 65px;
   left: 5px;
-  z-index: 1;
+  z-index: 4;
+  
 }
 
 /* cache l'icone fleche droite à la base */
 #glyph-right{
   display: none;
+}
+
+/* couleur des liens */
+a {
+  color: #0A0848;
+}
+
+a:hover {
+  color: #54551C;
+}
+
+/* block d'aide */
+.help-block {
+  color: #0B0B3B;
 }

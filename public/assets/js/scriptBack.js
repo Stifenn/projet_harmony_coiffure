@@ -1,6 +1,6 @@
 $(function(){
 
-	console.log('DOMContentLoaded : OK');
+	//console.log('DOMContentLoaded : OK');
 
 	// fonction sur le changement du select id #select-role dans manage.php
 	$('#select-role').change(function() {

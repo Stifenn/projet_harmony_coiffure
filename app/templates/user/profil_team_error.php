@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Erreur modification du profil']) ?>
+<?php $this->layout('layoutBack', ['title' => 'Erreur modification du profil']) ?>
 
 <?php $this->start('main_content') ?>
 	
@@ -18,7 +18,7 @@
 	<?php endif; ?>
 
 	<div class="col-sm-offset-2 col-sm-10">
-		<a href="<?= $this->url('profil') ?>">Retour au profil</a>
+		<a href="<?= $this->url('profil_team') ?>">Retour au profil</a>
 	</div>
 
 <?php $this->stop('main_content') ?>
