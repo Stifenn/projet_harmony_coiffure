@@ -163,7 +163,7 @@
 }
 
 /* Overlay helper */
-
+/*
 .fancybox-lock {
     overflow: hidden !important;
     width: auto;
@@ -176,7 +176,7 @@
 .fancybox-lock-test {
     overflow-y: hidden !important;
 }
-
+*/
 .fancybox-overlay {
 	position: absolute;
 	top: 0;
