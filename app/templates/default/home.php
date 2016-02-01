@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Accueil !']) ?>
+<?php $this->layout('layoutFront', ['title' => 'Accueil !']) ?>
 
 <?php $this->start('div_fixe') ?>
 	<button class="btn btn-default" id="control" type="button">
@@ -34,5 +34,143 @@
 
 <?php $this->stop('div_fixe') ?>
 
-<?php $this->stop('main_content') ?>
+	<!--
+
+	SLIDER
+
+	-->
+
+<?php $this->start('slider')?>
+
+<?php foreach($slider as $currentSlider) : ?>
+	<li><img src="<?=$this->assetUrl($currentSlider['chemin'])?>" alt="<?=$currentSlider['label']?>" /></li>
+<?php endforeach ?>
+
+<?php $this->stop('slider')?>
+
+<!--
+
+	LE SALON
+
+	-->
+
+<?php $this->start('about')?>
+
+<?php foreach($imageSite as $currentImageSite) : ?>
+	<?php if($currentImageSite['position'] == 'top') : ?>
+		<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+		<?php endif ?>
+	<?php if($currentImageSite['position'] == 'left' || $currentImageSite['position'] == 'middle' || $currentImageSite['position'] == 'right') :?>	
+      	<div class=" w-col w-col-4">
+			<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+        </div>
+    <?php endif ?>    	
+<?php endforeach ?>
+
+<?php $this->stop('about')?>
+
+<!--
+
+	TARIF
+
+	-->
+
+<?php $this->start('tarif') ?>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Prestation</th>
+	      <th>Hommes</th>
+	      <th>Femmes</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	      <?php foreach($tarif as $CurrentTarifs) :?>
+	      	<tr> 	
+			    <td><?= $CurrentTarifs['name'] ?></td>
+			    <td><?= $CurrentTarifs['prix_hommes'] ?></td>
+			    <td><?= $CurrentTarifs['prix_femmes'] ?></td>
+			</tr>
+	      <?php endforeach ?>
+	  </tbody>
+	</table>
+<?php $this->stop('tarif') ?>
+
+<!--
+
+	PRODUIT
+
+	-->
+
+<?php $this->start('produit') ?>
+<?php foreach($produit as $CurrentProduit) :?>
+	<li>
+      <figure>
+        <img class="portfolio-images" src="<?=$CurrentProduit['chemin']?>" alt="<?=$CurrentProduit['label']?>">
+        <figcaption>
+          <h3><?=$CurrentProduit['nom']?></h3>
+          <span><?=$CurrentProduit['description']?></span>
+          <a href="#">Take a look</a>
+        </figcaption>
+      </figure>
+    </li>
+<?php endforeach ?>
+<?php $this->stop('produit') ?>
+
+<!--
+
+	AJOUT COMMENTAIRE
+
+	-->
+
+
+<?php $this->start('Ajout_Commentaire') ?>
+
+<form action="#" method="post">
+    <label for="name">Nom:</label>
+     <input class="w-input" type="text" placeholder="Entrer votre Nom" name="name">
+   <label for="email">Email:</label>
+     <input class="w-input" placeholder="Entrer votre Email" type="text" name="email" required="required">
+   <label for="email">Votre Message:</label>
+     <textarea class="w-input message" placeholder="Entrer votre Message" name="message"></textarea><br>
+   <input class="w-button" type="submit" value="Send">
+</form>  
+
+<?php $this->stop('Ajout_Commentaire') ?>
+
+<!--
+
+	COMMENTAIRE
+
+	-->
+
+<?php $this->start('commentaire') ?>
+
+<?php foreach($showCommentaire as $currentShowComment) :?>
+	<blockquote class="blockquote-reverse">
+  		<p><?=$currentShowComment['commentaire']?></p>
+  		<footer><cite title="Source Title"><?=$currentShowComment['pseudo']?></cite></footer>
+	</blockquote>
+<?php endforeach ?>
+
+<?php $this->stop('commentaire') ?>
+
+<!--
+
+	GOOGLE
+
+	-->
+
+<?php $this->start('google') ?>
+<div id="floating-panel">
+	<b>Mode of Travel: </b>
+	<select id="mode">
+	  <option value="DRIVING">Driving</option>
+	  <option value="WALKING">Walking</option>
+	  <option value="BICYCLING">Bicycling</option>
+	</select>
+</div>
+<div id="map" onload="initMap()"></div>
+    
+<?php $this->stop('google') ?>
 

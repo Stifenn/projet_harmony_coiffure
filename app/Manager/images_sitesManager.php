@@ -15,4 +15,12 @@ class images_sitesManager extends  Manager
 		$sth->bindValue(':position', $position);
 		return $sth->execute();
 	}
+
+	public function showImagesSiteHome()
+	{
+		$sql = "SELECT chemin,label,position FROM images_sites";
+		$sth = $this->dbh->query($sql);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 }

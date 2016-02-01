@@ -7,7 +7,8 @@ use \W\Manager\Manager;
 class produitsManager extends  Manager
 {
 
-	public function update_image_produit($chemin, $label, $nom, $description, $numero){
+	public function update_image_produit($chemin, $label, $nom, $description, $numero)
+	{
 
 		$sql= "UPDATE produits SET chemin = :chemin, label = :label, nom = :nom, description = :description WHERE numero = :numero";
 		$sth = $this->dbh->prepare($sql);
@@ -18,4 +19,13 @@ class produitsManager extends  Manager
 		$sth->bindValue(':numero', $numero);
 		return $sth->execute();
 	}
+
+	public function showProduit()
+	{
+		$sql = "SELECT nom,description,chemin,label FROM produits";
+		$sth = $this->dbh->query($sql);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
+	
 }

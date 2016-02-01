@@ -13,5 +13,13 @@
 			$sth->bindValue(':label' , $label);
 			$sth->bindValue(':numero', $numero);
 			return $sth->execute();
+		}
+
+		public function showSliderHome()
+		{
+			$sql = "SELECT chemin,label FROM images_sliders";
+			$sth = $this->dbh->query($sql);
+			$sth->execute();
+			return $sth->fetchAll();
+		}
 	}
-}

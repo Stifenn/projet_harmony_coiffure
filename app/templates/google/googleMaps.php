@@ -1,6 +1,6 @@
 <?php $this->layout('layout', ['title' => 'GoogleMap']) ?>
 
-<?php $this->start('main_content') ?>
+<?php $this->start('google') ?>
 
 <title>Travel modes in directions</title>
 
@@ -14,6 +14,4 @@
     </div>
     <div id="map"  onload="initMap()"></div>
     
-    
-   
-<?php $this->stop('main_content') ?>
+<?php $this->stop('google') ?>
