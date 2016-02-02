@@ -22,7 +22,7 @@ class PrestationsController extends Controller
 		$this->allowTo(['admin','staff']);
 		$prestationsManager = new \Manager\PrestationsManager();
 		$prestation = $prestationsManager->getFicheById($id);
-		$this->show('fiche/modifFiche',['prestation' => $prestation]);
+		$this->show('fiche/modifFiche',['prestation' => $prestation, 'idFiche' => $id]);
 	}
 
 }

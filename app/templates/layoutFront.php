@@ -376,7 +376,7 @@
                 <h4 class="contact-col-head">Contactez Nous</h4>
               </div>
               <div>
-                <div class="contact-col-text">general: office@elegance.com
+                <div class="contact-col-text">general: harmony.coiffure@orange.fr
                   <br/> 
                 </div>
               </div>

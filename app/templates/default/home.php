@@ -55,7 +55,7 @@
 
 <?php foreach($imageSite as $currentImageSite) : ?>
 	<?php if($currentImageSite['position'] == 'top') : ?>
-		<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+			<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
 		<?php endif ?>
 	<?php if($currentImageSite['position'] == 'left' || $currentImageSite['position'] == 'middle' || $currentImageSite['position'] == 'right') :?>	
       	<div class=" w-col w-col-4">

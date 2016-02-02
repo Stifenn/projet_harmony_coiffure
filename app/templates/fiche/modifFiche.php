@@ -30,7 +30,7 @@
 					<input class="form-control" id="nom" type="text" name="nom" placeholder="Nom">
 				</div>
 			</div>
-			<input type="hidden" name="idFiche" value="<?= $prestation[0]['id_fiches_rdv'] ?>">
+			<input type="hidden" name="idFiche" value="<?= $idFiche ?>">
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="description">Description</label>
 				<div class="col-sm-10">

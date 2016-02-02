@@ -494,9 +494,9 @@ input.sp-selector-5:checked ~ .sp-content .sp-parallax-bg {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;
-    padding: 40px 0 50px 0;
+    /*padding: 40px 0 50px 0;
     max-height: 100%;
-    max-width: 100%;
+    max-width: 100%;*/
 }
 input.sp-selector-1:checked ~ .sp-content .sp-slider {
     left: 0;
@@ -2000,29 +2000,4 @@ blockquote.pull-right .small:after {
     .image_lookbook {margin-left: -35px; }
 }
 
-
-/*image lookbook sans deformation*/
-
-/*#lookbook
-{
-  margin-top: 60px;
-  margin-left: 100px;
-}
-
-#lookbook img
-{
-  border-radius: 50%;
-  border:1px solid white;
-  max-height: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-}
-
-.image_lookbook
-{
-  float: left;
-  margin-left: 20px;
-  width: 150px;
-  height: 150px;
-}*/
 
