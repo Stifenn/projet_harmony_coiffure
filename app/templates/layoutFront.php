@@ -12,33 +12,34 @@
   <link rel="stylesheet" href="<?= $this->assetUrl('source/jquery.fancybox.css?v=2.1.5') ?>" type="text/css" media="screen" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<<<<<<< HEAD
   <!-- api google -->
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true"
         async defer></script>
   <!-- Jquery 2.2.0 -->
+=======
+>>>>>>> bug_fix
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
       <!-- jQuery UI 1.10.3 -->
   <script src="<?= $this->assetUrl('js/js_theme/jquery-ui-1.10.3.min.js') ?>" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjS2ZDG_eOKlXNUeGob9gvoxe3EdMRXVA&signed_in=true"
+        async defer></script>
+
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
   <!-- Add jQuery library -->
   <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/normal.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/carousels.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/classie.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/portfolio-effects.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/toucheffects.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/modernizr.js')?>"></script>
-  <script src="<?= $this->assetUrl('js/js_theme_front/animation.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/jquery.js')?>"></script>
-  <script type="text/javascript" src="<?= $this->assetUrl('js/script.js')?>"></script>
    <!-- fancybox -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('lib/jquery.mousewheel-3.0.6.pack.js') ?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('source/jquery.fancybox.pack.js?v=2.1.5')?>"></script>
+<<<<<<< HEAD
+=======
+  <script type="text/javascript" src="<?= $this->assetUrl('js/script.js')?>"></script>
+>>>>>>> bug_fix
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
@@ -122,14 +123,14 @@
         <label for="button-4" class="button-label-4"></label>
         
         <input id="button-5" type="radio" name="radio-set" class="sp-selector-5" />
-        <label for="button-5" class="button-label-5"></label> -->
+        <label for="button-5" class="button-label-5"></label>  -->
         
         <label for="button-1" class="sp-arrow sp-a1"></label>
         <label for="button-2" class="sp-arrow sp-a2"></label>
         <label for="button-3" class="sp-arrow sp-a3"></label>
       
-      <!--   <label for="button-4" class="sp-arrow sp-a4"></label>
-      <label for="button-5" class="sp-arrow sp-a5"></label> -->
+     <!--  <label for="button-4" class="sp-arrow sp-a4"></label>
+     <label for="button-5" class="sp-arrow sp-a5"></label> -->
         
         <div class="sp-content">
           <div class="sp-parallax-bg"></div>
@@ -159,11 +160,11 @@
         <div class="wrap">
           <div class="about">
             <h1 class="about-heading">Le Salon</h1>
-            <div class="about-text">Qui sommes nous ?</div>
+            <div class="about-text">Presentation</div>
             <div class="sepreater"></div>
           </div>
-          <p class="about-des">We are Elegance. We create stunning identities for our clients that people fall in love with.&nbsp;
-            <br>Whether it's an app icon, a logo for a hot startup, or just an illustration, we'll work hard until you can't help but say "WOW!". 
+          <p class="about-des">Harmony Coiffure vous accueille dans une ambiance de détente, de bien-être et un cadre reposant.&nbsp;
+            <br>Notre équipe est là pour vous proposer tout son savoir-faire et ses connaissances de la coiffure afin de vous métamorphoser. 
           </p>
            <?=$this->section('about')?>
         </div>
@@ -193,9 +194,9 @@
               <div class="services-text">WHAT WE DO?</div>
               <div class="sepreater service"></div>
             </div>
-            <div class="services-text">“ THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT ”
-              <br>We understand that everybody has their unique strengths and we put that knowledge to use by assembling the most efficient team possible for your project. You know your business better than anyone. Your insights, combined with our skills
-              and creativity, will result in branding and marketing that truly stand out. We’re ready to get started.</div>
+            <div class="services-text">Nous proposons des formules adaptées à notre clientèle.
+                                       Tous les jeudis, profitez de notre offre -20% sur tous nos services.
+            </div>
             <?=$this->section('tarif')?>
             </div>
           </div>
@@ -220,8 +221,7 @@
             <h1 class="portfolio-heading">NOS PRODUIT</h1>
             <div class="sepreater"></div>
           </div>
-          <p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
-            <br>We do what we love. Our clients love what we do.</p>
+          <p class="porfolio-paragraph">Notre salon utilise les produits de la marque l’Oréal Professionnel, pour le respect de vos cheveux, de votre cuir chevelu et pour votre plus grand confort.</p>
             <div class="container demo-1">
               <ul class="grid cs-style-1">
                 <?=$this->section('produit')?>
@@ -245,8 +245,8 @@
             <div class="portfolio-text">OUR WORK</div>
             <div class="sepreater"></div>
           </div>
-          <p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
-            <br>We do what we love. Our clients love what we do.</p>
+          <!--<p class="porfolio-paragraph">THE BEST RESULTS ARE OBTAINED BY TASKING THE RIGHT PEOPLE TO THE RIGHT PROJECT
+            <br>We do what we love. Our clients love what we do.</p>-->
             <div class="container demo-1">
               <ul class="grid cs-style-1">
                 <div id='lookbook'>
@@ -364,8 +364,8 @@
           <h1 class="contact-heading">COMMENTAIRES</h1>
           <div class="sepreater"></div>
         </div>
-        <p class="contact-para">Thanks for taking the time to contact us!
-          <br>We do our best to respond to quickly, it could take us 1-2 business days to get back to you. Feel free to say hello!</p>
+        <!--<p class="contact-para">Thanks for taking the time to contact us!
+          <br>We do our best to respond to quickly, it could take us 1-2 business days to get back to you. Feel free to say hello!</p>-->
         <div class="w-form w-col w-col-4">
           <?= $this->section('Ajout_Commentaire');?>
         </div>
@@ -382,12 +382,12 @@
             <div class="w-col w-col-4 contact-col2">
               <div>
                 <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                    <div class="hi-icon hi-icon-mail">Partners</div>
+                    <a href="<?=$this->url('contact')?>"><div class="hi-icon hi-icon-mail">Partners</div></a>
                 </div>
                 <h4 class="contact-col-head">Contactez Nous</h4>
               </div>
               <div>
-                <div class="contact-col-text">general: office@elegance.com
+                <div class="contact-col-text">general: harmony.coiffure@orange.fr
                   <br/> 
                 </div>
               </div>
@@ -466,7 +466,15 @@
        <!--///////////////////////////////////////////////////////
        // End Footer section 
        //////////////////////////////////////////////////////////-->
-
+  
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/normal.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/carousels.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/js_theme_front/slider-modernizr.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/classie.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/toucheffects.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/modernizr.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/animation.js')?>"></script>
+  <script src="<?= $this->assetUrl('js/js_theme_front/portfolio-effects.js')?>"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-(function() {
+$(function() {
 
 	'use strict';
 
@@ -129,4 +129,4 @@
 	
 	init();
 
-})();
+});

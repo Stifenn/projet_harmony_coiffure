@@ -1,10 +1,6 @@
 <?php $this->layout('layoutFront', ['title' => 'Accueil !']) ?>
 
 <?php $this->start('div_fixe') ?>
-	<button class="btn btn-default" id="control" type="button">
-		<span id="glyph-left" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-		<span id="glyph-right" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-	</button>
 	<div id="user">
 	<?php
 		// Si il n'y a pas de session active j'affiche les lien de connexion et de création de compte
@@ -59,7 +55,7 @@
 
 <?php foreach($imageSite as $currentImageSite) : ?>
 	<?php if($currentImageSite['position'] == 'top') : ?>
-		<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
+			<img class="about-img" src="<?=$this->assetUrl($currentImageSite['chemin'])?>" alt="<?=$currentImageSite['label']?>" />
 		<?php endif ?>
 	<?php if($currentImageSite['position'] == 'left' || $currentImageSite['position'] == 'middle' || $currentImageSite['position'] == 'right') :?>	
       	<div class=" w-col w-col-4">

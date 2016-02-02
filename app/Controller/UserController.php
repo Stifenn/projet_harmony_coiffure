@@ -39,6 +39,7 @@ class UserController extends Controller
 
 	public function Recherche()
 	{
+		$this->allowTo(['admin','staff']);
 		
 		$usersManager = new \Manager\UserManager();
 
